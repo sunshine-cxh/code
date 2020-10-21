@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+    <title>监控管理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+      <!--right slidebar-->
+      <link href="css/slidebars.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/index-debug.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.step.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+   <style type="text/css">
+      .col-lg-6 {width:50%;float:left}
+	  .Monitor{text-decoration:underline;}
+	  .text-ellipsis{font-size:15px;}
+	   .btn-group label:hover,.btn-group label:active{
+            color: #3399ff;
+            background: #fff!important;
+        }
+        .btn-group label.active{
+            border-bottom:2px solid  #3399ff;
+            background: #fff;
+            color: #3399ff;
+        }
+        .table-hover>tbody>tr:hover{
+            background: #ddeeff;
+        }
+		#notice li{line-height:30px}
+		.Monitor{padding-right:15px;padding-left:15px;}
+		.ant-btn-primary {
+					background-color: #203684!important;
+					border-radius: 0;
+				}
+		.ant-btn-primary>span{ color:#FFFFFF}
+		.cal_btns {
+			display: flex;
+			justify-content: center;
+		}
+		.mR10 {
+			margin-right: 10px;
+		}
+
+		.mT10 {
+			margin-top: 15px;
+		}
+		
+   </style>
+  </head>
+  <body>
+     <section id="container" class="">
+         <section class="wrapper site-min-height">		
+		  <!-- page start-->
+		  <div id="morris">
+			   <div class="row">
+				<div class="col-lg-12">
+				 <section class="panel">
+		         <header class="panel-heading">
+			 	 SCADA监控点   <button type="button" style="float:right" class="ant-btn ant-btn-primary" onClick="AddTr();"><span>添 加</span></button>
+			     </header>
+                 <table class="table table-advance table-hover" id="TbMonitor">
+                   <tr>
+				    <td>
+					  <select id="check1" onChange="change(this);" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">门站一</option> 
+						<option value="2">门站二</option> 
+						<option value="3">门站三</option> 
+						<option value="4">调压站一</option> 
+						<option value="5">调压站二</option> 
+						<option value="6">调压站三</option> 
+					  </select> 
+					</td>
+					<td>入口压力： <label id="inpressure1" class="Monitor">0</label>Mpa</td>
+					<td>出口压力： <label id="outpressure1" class="Monitor">0</label>Mpa</td>
+					<td>瞬时流量：<label id="instantaneous1" class="Monitor">0</label>Nm³/h</td>
+					<td>累计流量：<label id="flow1" class="Monitor">0</label>Nm³/h</td>
+					<td><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"  onClick="DeleteTr(this);"><span>删 除</span></button></td>
+				   </tr>  
+				   <tr>
+				     <td>
+					  <select id="check2" onChange="change(this);" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">门站一</option> 
+						<option value="2">门站二</option> 
+						<option value="3">门站三</option> 
+						<option value="4">调压站一</option> 
+						<option value="5">调压站二</option> 
+						<option value="6">调压站三</option> 
+					  </select> 
+					</td>
+					<td>入口压力：<label id="inpressure2" class="Monitor">0</label>Mpa</td>
+					<td>出口压力：<label id="outpressure2" class="Monitor">0</label>Mpa</td>
+					<td>瞬时流量：<label id="instantaneous2" class="Monitor">0</label>Nm³/h</td>
+					<td>累计流量：<label id="flow2" class="Monitor">0</label>Nm³/h</td>
+					<td><button type="button" class="ant-btn btnDel" onClick="DeleteTr(this);" style="background:#fff;border-color:#203864;color:#203864;"><span>删 除</span></button></td>
+				   </tr>   
+				   <tr>
+				      <td>
+					  <select id="check3" onChange="change(this);" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">门站一</option> 
+						<option value="2">门站二</option> 
+						<option value="3">门站三</option> 
+						<option value="4">调压站一</option> 
+						<option value="5">调压站二</option> 
+						<option value="6">调压站三</option> 
+					  </select> 
+					</td>
+					<td>入口压力：<label id="inpressure3" class="Monitor">0</label>Mpa</td>
+					<td>出口压力：<label id="outpressure3" class="Monitor">0</label>Mpa</td>
+					<td>瞬时流量：<label id="instantaneous3" class="Monitor">0</label>Nm³/h</td>
+					<td>累计流量：<label id="flow3" class="Monitor">0</label>Nm³/h</td>
+					<td><button type="button" class="ant-btn btnDel" onClick="DeleteTr(this);" style="background:#fff;border-color:#203864;color:#203864;"><span>删 除</span></button></td>
+				   </tr>   
+				   <tr>
+				      <td>
+					  <select id="check4" onChange="change(this);" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">门站一</option> 
+						<option value="2">门站二</option> 
+						<option value="3">门站三</option> 
+						<option value="4">调压站一</option> 
+						<option value="5">调压站二</option> 
+						<option value="6">调压站三</option> 
+					  </select> 
+					</td>
+					<td>入口压力：<label id="inpressure4" class="Monitor">0</label>Mpa</td>
+					<td>出口压力：<label id="outpressure4" class="Monitor">0</label>Mpa</td>
+					<td>瞬时流量：<label id="instantaneous4" class="Monitor">0</label>Nm³/h</td>
+					<td>累计流量：<label id="flow4" class="Monitor">0</label>Nm³/h</td>
+					<td><button type="button" class="ant-btn btnDel" onClick="DeleteTr(this);" style="background:#fff;border-color:#203864;color:#203864;"><span>删 除</span></button></td>
+				   </tr>   
+				   <tr>
+				      <td>
+					  <select id="check5" onChange="change(this);" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">门站一</option> 
+						<option value="2">门站二</option> 
+						<option value="3">门站三</option> 
+						<option value="4">调压站一</option> 
+						<option value="5">调压站二</option> 
+						<option value="6">调压站三</option> 
+					  </select> 
+					</td>
+					<td>入口压力：<label id="inpressure5" class="Monitor">0</label>Mpa</td>
+					<td>出口压力：<label id="outpressure5" class="Monitor">0</label>Mpa</td>
+					<td>瞬时流量：<label id="instantaneous5" class="Monitor">0</label>Nm³/h</td>
+					<td>累计流量：<label id="flow5" class="Monitor">0</label>Nm³/h</td>
+					<td><button type="button" class="ant-btn btnDel" onClick="DeleteTr(this);" style="background:#fff;border-color:#203864;color:#203864;"><span>删 除</span></button></td>
+				   </tr>    
+				 </table>
+				</section>	
+				<div style="height:1px; background:#E0E0E0;"></div>					 
+				<section class="panel">
+				<table class="table table-bordered">
+                   <tr>   
+				      <td width="45%">
+					      <header class="panel-heading" style=" height:65px">
+			 	  SCADA异常信息   <span style="float:right;font-size:14px">接报数量 <a style="color:#FFCC00">7</a>  &nbsp;&nbsp;&nbsp;&nbsp;已处理 <a style="color:#00FF00">3</a></span>
+			     </header>
+                <ul id="notice" style="width:70%; height:200px; text-align:left;">
+                    <li class="text-ellipsis">
+                    	<table><tr>
+                    		<td style="width: 100px;">[流量]</td>
+                    		<td style="width: 180px;">公明调压站</td>
+                    		<td style="width: 160px;">0100号表</td>
+                    		<td style="width: 100px;"><span style="color:#0000FF">泄露</span></td>
+                    	</tr></table>
+                    </li>
+                    <li class="text-ellipsis">
+                    	<table><tr>
+                    		<td style="width: 100px;">[流量]</td>
+                    		<td style="width: 180px;">红岭东(龙岗)调压站</td>
+                    		<td style="width: 160px;">135 号表流量</td>
+                    		<td style="width: 100px;"><span style="color:#FF0000">异常</span></td>
+                    	</tr></table>
+                    </li>
+                    <li class="text-ellipsis">
+                    	<table><tr>
+                    		<td style="width: 100px;">[压力]</td>
+                    		<td style="width: 180px;">梅林调压站</td>
+                    		<td style="width: 160px;">01号表压力</td>
+                    		<td style="width: 100px;"><span style="color:#0000FF">泄露</span></td>
+                    	</tr></table>
+                    </li>
+					<li class="text-ellipsis">
+						<table><tr>
+                    		<td style="width: 100px;">[压力]</td>
+                    		<td style="width: 180px;">沙井调压站</td>
+                    		<td style="width: 160px;">01号表压力</td>
+                    		<td style="width: 100px;"><span style="color:#FF0000">异常</span></td>
+                    	</tr></table>
+					</li>
+					<li class="text-ellipsis">
+						<table><tr>
+                    		<td style="width: 100px;">[压力]</td>
+                    		<td style="width: 180px;">南油调压站</td>
+                    		<td style="width: 160px;">01号表压力</td>
+                    		<td style="width: 100px;"><span style="color:#FF0000">异常</span></td>
+                    	</tr></table>
+					</li>
+					<li class="text-ellipsis">
+						<table><tr>
+                    		<td style="width: 100px;">[压力]</td>
+                    		<td style="width: 180px;">罗芳调压站</td>
+                    		<td style="width: 160px;">01号表压力</td>
+                    		<td style="width: 100px;"><span style="color:#0000FF">泄露</span></td>
+                    	</tr></table>
+					</li>
+                </ul>
+					  </td>
+					  
+				   </tr>
+				 </table>
+		        
+			   </section>
+			    
+			  </div>                      
+			  </div>
+    	  		  
+		   </div>
+		</section>
+	</section>
+	
+   <!-- js placed at the end of the document so the pages load faster -->
+ <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+
+  <!--right slidebar-->
+  <script src="js/slidebars.min.js"></script>
+<!--  <script src="js/jquery.min.js"></script>-->
+  <script src="js/jquery.step.js"></script>
+	<!-- antd -->
+	<link rel="stylesheet" href="./assets/react/antd.min.css"/>
+	<script src="./assets/react/antd.min.js"></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+	
+	<script type="text/javascript">
+	  function change(obj)
+	  {
+	      var ControlId = $(obj).attr("id");
+		  var Order = ControlId.charAt(ControlId.length - 1);
+		  var _value = $(obj).val();
+		  FillValues(Order,_value);
+	     
+		  var chkstring = '';
+	      var check1 = $("#check1 option:selected").val();
+		  var check2 = $("#check2 option:selected").val();
+		  var check3 = $("#check3 option:selected").val();
+		  var check4 = $("#check4 option:selected").val();
+		  var check5 = $("#check5 option:selected").val();
+		  if(check1 >0 )
+		     chkstring += check1.toString();
+		  if(check2 >0 )
+		     chkstring += check2.toString();
+		  if(check3 >0 )
+		     chkstring += check3.toString();
+		  if(check4 >0 )
+		     chkstring += check4.toString();
+		  if(check5 >0 )
+		     chkstring += check5.toString();
+			 
+		 /* for (var i=1;i<7;i++)
+          {
+             if(chkstring.indexOf(i) >= 0)
+			 {
+			   if(check1 == 0)
+			      $("#check1>option:eq("+i+")").remove();				  
+			   if(check2 == 0)
+			      $("#check2>option:eq("+i+")").remove();
+			   if(check3 == 0)
+			      $("#check3>option:eq("+i+")").remove();
+			   if(check4 == 0)
+			      $("#check4>option:eq("+i+")").remove();
+			   if(check5 == 0)
+			      $("#check5>option:eq("+i+")").remove();
+			 }
+          }*/
+	  }
+	  
+	  function Mchange(obj)
+	  {
+	      var ControlId = $(obj).attr("id");
+		  var Order = ControlId.charAt(ControlId.length - 1);
+		  var _value = $(obj).val();
+		  var _src = "img/Monitor/MonitorImg"+_value+".png";
+		  if(_value >0 )
+		  {	    
+		     $("#ImgMonitor"+Order).attr('src',_src);
+             $("#ImgMonitor"+Order).css('display','block');//显示
+		  }
+		  else 
+		  {
+		     $("#ImgMonitor"+Order).css('display','none');//隐藏
+		  }
+	  }
+	  
+	  function FillValues(i,j)
+	  {
+	      switch(j)
+		  { 
+		    case "1":
+			  {
+			    $("#inpressure"+i).text('3.5');
+				$("#outpressure"+i).text('3.4');
+				$("#instantaneous"+i).text('200');
+				$("#flow"+i).text('500');
+			    break;
+			  }
+			case "2":
+			  {
+			    $("#inpressure"+i).text('3.7');
+				$("#outpressure"+i).text('3.6');
+				$("#instantaneous"+i).text('215');
+				$("#flow"+i).text('620');
+			    break;
+			  }			
+			case "3":
+			  {
+			    $("#inpressure"+i).text('3.5');
+				$("#outpressure"+i).text('3.5');
+				$("#instantaneous"+i).text('195');
+				$("#flow"+i).text('512');
+			    break;
+			  }
+			case "4":
+			  {
+			    $("#inpressure"+i).text('3.9');
+				$("#outpressure"+i).text('3.7');
+				$("#instantaneous"+i).text('0');
+				$("#flow"+i).text('0');
+			    break;
+			  }
+			case "5":
+			  {
+			    $("#inpressure"+i).text('3.6');
+				$("#outpressure"+i).text('3.6');
+				$("#instantaneous"+i).text('0');
+				$("#flow"+i).text('0');
+			    break;
+			  }
+			case "6":
+			  {
+			    $("#inpressure"+i).text('3.7');
+				$("#outpressure"+i).text('3.6');
+				$("#instantaneous"+i).text('0');
+				$("#flow"+i).text('0');
+			    break;
+			  }
+			default:
+			  break;
+		  }
+	  }
+	  
+	  
+	$(function () {
+    movedome();
+       $(".table-bordered img").hover(function(){
+	     var p = $(this).offset();
+		 var x = p.left - $(this).outerWidth() -210;
+		 var y = p.top - $(this).outerHeight()-300;
+		 $("#imgbig").attr("src",$(this).attr("src"));
+		 $("#divImage").show();
+	   
+	   } ,function(){
+         $('#divImage').hide();
+       })	   
+    });
+
+function movedome(){
+        var margintop=0;//上边距的偏移量
+        var stop=false;
+        setInterval(function(){
+            if(stop==true){
+                return;
+            }
+            $("#notice").children("li").first().animate({"margin-top":margintop--},0,function(){
+                var $li=$(this);
+                if(!$li.is(":animated")){//第一个li的动画结束时
+                    if(-margintop>$li.height()){
+                        $li.css("margin-top","0px").appendTo($("#notice"));
+                        margintop=0;
+                    }
+                }
+            });
+        },50);
+        //鼠标放到快递信息(ul)上时
+        $("#notice").hover(function(){
+            $(this).css("cursor","pointer");
+            stop=true;//停止动画
+        },function(){
+            stop=false;//开始动画
+        });
+    }
+	 function DeleteTr(nowTr)
+	{
+	     $(nowTr).parent().parent().remove();
+	}
+	function AddTr()
+	{
+	  var ControlId = $("#TbMonitor tr:last").find('select').attr("id");
+	   var Order = Number(ControlId.charAt(ControlId.length - 1)) +1;	   
+				   
+	   var trHTML = "<tr><td> <select id='check"+Order+"' onChange='change(this);' style='width:100px;height:30px;'><option value='0'>请选择</option><option value='1'>门站一</option>" ;
+			trHTML +="<option value='2'>门站二</option><option value='3'>门站三</option>"; 
+			trHTML +="<option value='4'>调压站一</option><option value='5'>调压站二</option>"; 
+			trHTML +="<option value='6'>调压站三</option></select></td>";
+		    trHTML +="<td>入口压力：<label id='inpressure"+Order+"' class='Monitor'>0</label>Mpa</td>";
+			trHTML +="<td>出口压力：<label id='outpressure"+Order+"' class='Monitor'>0</label>Mpa</td>";
+		    trHTML +="<td>瞬时流量：<label id='instantaneous"+Order+"' class='Monitor'>0</label>Nm³/h</td>";
+		    trHTML +="<td>累计流量：<label id='flow"+Order+"' class='Monitor'>0</label>Nm³/h</td>";
+		    trHTML +="<td><button type='button' class='ant-btn' style='background:#fff;border-color:#203864;color:#203864;' onClick='DeleteTr(this);'><span>删 除</span></button></td></tr>";
+
+			$("#TbMonitor").append(trHTML);
+}
+	</script>
+
+	<!-- react -->
+	<script src="./assets/react/react.min.js"></script>
+	<script src="./assets/react/react-dom.min.js"></script>
+	<!-- 生产环境中不建议使用 -->
+	<script src="./assets/react/babel.min.js"></script>
+	<script src="./assets/react/moment.js"></script>
+	<!-- antd -->
+	<link rel="stylesheet" href="./assets/react/antd.min.css"/>
+	<script src="./assets/react/antd.min.js"></script>
+
+	<script type="text/babel">
+		$(function() {
+			// 引入组件
+			const { Steps } = antd;
+			const { Step } = Steps;
+				
+			const step = $('#step')[0];
+
+			ReactDOM.render(
+				<div class="step">
+					<Steps current={2}>
+						<Step title="接报" description="" />
+						<Step title="调派" description="" />
+						<Step title="出险" description="" />
+						<Step title="到场" description="" />
+						<Step title="处理" description="" />
+						<Step title="完工" description="" />
+					</Steps>
+				</div>,
+				step
+			)
+		})
+		</script>
+  </body>
+  </html>

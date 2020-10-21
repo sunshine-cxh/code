@@ -1,0 +1,38 @@
+.custom-btn{
+  cursor: pointer;
+  min-height: 38px;
+  border-radius: 4px;
+  border: 1px solid rgb(154, 154, 154);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  &:hover {
+    border-color: #40a9ff;
+    .delete-btn{
+      display: block ;
+    }
+  }
+  .delete-btn {
+    display: none;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.25);
+    &>:hover{
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+
+  .text_side{
+    padding-left: 10px;
+    min-height: 38px;
+    .text-btn {
+      margin-right: 10px;
+      // background-color: #cccddd;
+    }
+  }
+  .place-holder{
+    color: #bfbfbf;
+  }
+}

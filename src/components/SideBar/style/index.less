@@ -1,0 +1,247 @@
+@import '~antd/lib/style/themes/default.less';
+@import './darkgrey.less';
+@import '../../../assets/styles/flex.less';
+@import '../../../assets/styles/variables.less';
+
+@sm-width: 76px;
+@color-menu-title-default: rgba(140, 211, 239, 1);
+@color-menu-title-active: rgba(15, 32, 75, 1);
+
+// 左侧边栏
+.sidebar-left {
+  background: @backgroud-color-primary !important;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+
+  &.sidebar-left-sm {
+    .ant-menu {
+      &.ant-menu-inline-collapsed {
+        width: @sm-width;
+        > .ant-menu-submenu .ant-menu-submenu-title,
+        .ant-menu-item {
+          padding: 0 20px !important;
+          margin: 0;
+          .anticon {
+            font-size: 18px;
+          }
+          > span,
+          > a {
+            .flexbox();
+            .flex-align-items-center();
+            .flex-justify-content-center();
+            i {
+              margin: 0;
+            }
+            span {
+              width: 0;
+              overflow: hidden;
+            }
+          }
+          // &:hover {
+          //   background-color: #fff;
+          //   i {
+          //     color: @color-menu-title-active;
+          //   }
+          // }
+
+          //缩回去时鼠标移上去的提示
+          &.antd-tooltip-open {
+            a {
+              i {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar-header {
+      .title {
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .toggle-wrap {
+    position: absolute;
+    right: -12px;
+    top: 23px; //（70-24）/ 2
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid rgba(228, 233, 246, 1);
+    box-shadow: 0px 1px 4px 0px rgba(15, 32, 75, 0.1);
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 2px 2px 4px 0px rgba(15, 32, 75, 0.4);
+    }
+
+    .toggle-icon {
+      font-size: 12px;
+      color: #0052cc;
+      position: absolute;
+      top: 50%;
+      margin: -6px 0 0 -6px;
+    }
+  }
+
+  .sidebar-header {
+    .flexbox();
+    .flex-align-items-center();
+    .flex-justify-content-flex-start();
+    height: 70px;
+    line-height: 70px;
+    padding-left: 23px;
+    .icon-wrap {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 8px;
+      text-align: center;
+      // background-color: #fff;
+      .icon {
+        font-size: 30px;
+        // color: #0f204b;
+        color: #fff;
+      }
+    }
+    .title {
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+
+  .ant-menu {
+    background: @backgroud-color-primary;
+    > .ant-menu-item,
+    > .ant-menu-submenu > .ant-menu-submenu-title {
+      margin: 0;
+      padding-left: 28px !important;
+      padding-right: 22px !important;
+      height: 54px;
+      line-height: 54px;
+      width: 100%;
+      background: @backgroud-color-primary;
+      font-size: 14px;
+
+      i {
+        margin-right: 14px;
+        font-size: 18px;
+        color: @color-menu-title-default;
+      }
+      a {
+        .flexbox();
+        .flex-align-items-center();
+        color: @color-menu-title-default;
+      }
+      > span {
+        .flexbox();
+        .flex-align-items-center();
+        color: @color-menu-title-default;
+      }
+
+      .ant-menu-submenu-arrow:before,
+      .ant-menu-submenu-arrow:after {
+        right: 0px !important;
+        background-color: @color-menu-title-default !important;
+      }
+    }
+
+    .ant-menu-sub {
+      background-color: @backgroud-color-primary !important;
+      > .ant-menu-item {
+        padding-left: 62px !important;
+        height: 46px;
+        line-height: 46px;
+      }
+    }
+
+    .ant-menu-submenu-open {
+      .ant-menu-item-selected {
+        background: rgba(255, 255, 255, 0.2);
+        > a {
+          span {
+            color: @color-menu-title-default !important;
+          }
+        }
+      }
+      > .ant-menu-submenu-title {
+        background: rgba(255, 255, 255, 1);
+        span,
+        i {
+          color: @color-menu-title-active !important;
+        }
+
+        .ant-menu-submenu-arrow:before,
+        .ant-menu-submenu-arrow:after {
+          color: @color-menu-title-active !important;
+          background-color: @color-menu-title-active !important;
+        }
+      }
+    }
+
+    .ant-menu-item-selected {
+      background-color: #fff;
+      > a {
+        i,
+        span {
+          color: @color-menu-title-active !important;
+        }
+      }
+    }
+  }
+}
+
+//左边导航缩小时，有三级导航时的样式
+.ant-menu-submenu-popup {
+  .ant-menu-sub {
+    margin-top: 2px;
+    .ant-menu-item {
+      a {
+        .flexbox();
+        .flex-align-items-center();
+        i {
+          font-size: 16px;
+          margin-right: 4px;
+          margin-left: 0;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+//左边导航缩小时,鼠标移上去弹出的样式
+.ant-tooltip {
+  &.ant-menu-inline-collapsed-tooltip {
+    .ant-tooltip-content {
+      .ant-tooltip-inner {
+        a {
+          i {
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 左抽屉
+.left-sidebar-drawer {
+  .ant-drawer-close-x {
+    display: none;
+  }
+  .ant-drawer-body {
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .sidebar-left {
+    min-height: 100vh;
+  }
+}

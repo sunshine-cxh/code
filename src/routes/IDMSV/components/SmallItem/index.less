@@ -1,0 +1,93 @@
+
+.item{
+  width: 16%;
+  height: 90%;
+  .line {
+    margin:0 auto;
+    height: 1px;
+    width: 100%;
+    background: radial-gradient(rgba(86, 228, 255, 1) 24%, rgba(86, 228, 255, 0) 100%);
+  }
+  
+  .text {
+    margin:0 auto;
+    // height: 3.33vh;
+    // line-height: 3.33vh;
+    width: 100%;
+    text-align: center;
+    color: rgba(178, 236, 255, 1);
+    height: 90%;
+    // line-height: 2.3;
+    &>span{
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+  
+  .out-box {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin-top: 10%;
+    padding: 12px;
+    -webkit-box-shadow: #0beaeb 0px 0px 18px inset;
+    box-shadow: #0beaeb 0px 0px 18px inset;
+
+    .corner-small{
+      position: absolute;
+      width: 5px;
+      height: 10px;
+      border: solid;
+      border-color: #69c0fc;
+    }
+    .corner-left-top{
+      top: 0;
+      left: 0;
+      border-width: 1px 0 0 1px;
+    }
+    .corner-left-bottom{
+      bottom: -14px;
+      left: 0;
+      border-width: 0 0 1px 1px;
+    }
+    .corner-right-top{
+      top: 0;
+      right: 0;
+      border-width: 1px 1px 0 0;
+    }
+    .corner-right-bottom{
+      bottom: -14px;
+      right: 0;
+      border-width: 0 1px 1px 0;
+    }
+
+    .inner-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+     
+      background: -moz-linear-gradient(top, #00E4FF 0%, #88ebff 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00E4FF ), color-stop(100%,#88ebff));
+      background: -webkit-linear-gradient(top, #00E4FF 0%,#88ebff 100%);
+      background: -o-linear-gradient(top, #00E4FF 0%,#88ebff 100%);
+      background: -ms-linear-gradient(top, #00E4FF 0%,#88ebff 100%);
+      background: linear-gradient(to bottom, #00E4FF 0%,#88ebff 100%);
+
+      // text-align: left;
+      // padding-left: 15px;
+      font-size: 1.35vw;
+      &>span{
+        font-size: 12px;
+        padding-top: 12px;
+      }
+    }
+  }
+}
+
+

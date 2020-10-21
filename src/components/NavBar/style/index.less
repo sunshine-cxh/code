@@ -1,0 +1,282 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../../assets/styles/variables.less';
+@import '../../../assets/styles/flex.less';
+//修改了navbar-height 的值要修改 Layout/basic.less里的 100vh-56px
+@navbar-height: 56px;
+@sm-width: 76px;
+
+@keyframes spining {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  .flexbox();
+  z-index: 1030;
+  height: @navbar-height;
+  border-radius: 0;
+  padding-left: 0;
+  list-style: none;
+  user-select: none;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(15, 32, 75, 0.1);
+
+  i {
+    position: relative;
+    vertical-align: middle;
+  }
+
+  &.navbar-sm {
+    .navbar-branding {
+      width: @sm-width;
+      min-width: @sm-width;
+      .navbar-brand {
+        width: @sm-width;
+      }
+    }
+    .client-name {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+  .navbar-branding {
+    position: relative;
+    overflow: hidden;
+    width: 230px;
+    min-width: 230px;
+    height: @navbar-height;
+    transition: all 0.2s ease;
+    background-color: #0f204b;
+    text-align: center;
+    cursor: pointer;
+    .navbar-brand {
+      height: @navbar-height;
+      .flexbox();
+      .flex-align-items-center();
+      .flex-justify-content-flex-start();
+      padding-left: 23px;
+      font-size: 18px;
+      letter-spacing: 0.6px;
+      overflow: hidden;
+      color: #fff;
+
+      .logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        &.spining {
+          animation: spining 5s linear infinite;
+        }
+      }
+      .client-name {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .navbar-right {
+    min-width: 320px;
+    height: @navbar-height;
+    padding-right: 18px;
+    z-index: 10;
+    background: rgb(255, 255, 255, 1);
+
+    .navbar-nav {
+      .flexbox();
+      .flex-justify-content-flex-end();
+      > li > a {
+        height: @navbar-height;
+        line-height: @navbar-height;
+        position: relative;
+        display: block;
+        padding-right: 12px;
+        padding-left: 12px;
+        font-weight: 600px;
+        color: #0f204b;
+
+        i {
+          font-size: 18px;
+          margin-top: -3px;
+          &.icon-screenfull {
+            font-weight: 100;
+            font-size: 19px;
+          }
+
+          &.icon-notice {
+            color: #0f204b;
+          }
+        }
+        &.user {
+          .user-avatar {
+            margin-top: -3px;
+          }
+          span.user-name {
+            margin-left: 4px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  &.bg-primary {
+    color: @color-primary;
+    background-color: rgba(4, 57, 140, 1);
+    border-color: transparent;
+    .navbar-branding {
+      background-color: rgba(4, 57, 140, 1);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: @color-primary;
+    }
+  }
+
+  &.bg-dark {
+    color: #fff;
+    background-color: #001529;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#001529, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#001529, 5%);
+    }
+  }
+
+  &.bg-light {
+    background-color: #fff;
+  }
+  &.bg-info {
+    color: #fff;
+    background-color: #00bcd4;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#00bcd4, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#00bcd4, 5%);
+    }
+  }
+  &.bg-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#ffc107, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#ffc107, 5%);
+    }
+  }
+  &.bg-danger {
+    color: #fff;
+    background-color: #f44336;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#f44336, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#f44336, 5%);
+    }
+  }
+  &.bg-alert {
+    color: #fff;
+    background-color: #9575cd;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#9575cd, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#9575cd, 5%);
+    }
+  }
+  &.bg-system {
+    color: #fff;
+    background-color: #48c9a9;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#48c9a9, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#48c9a9, 5%);
+    }
+  }
+  &.bg-success {
+    color: #fff;
+    background-color: #85d27a;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#85d27a, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#85d27a, 5%);
+    }
+  }
+  &.bg-grey {
+    color: #fff;
+    background-color: #30363e;
+    border-color: transparent;
+    .navbar-branding {
+      background-color: darken(#30363e, 5%);
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .nav > li > a {
+      color: #fff;
+    }
+    .nav > li > a:hover {
+      background-color: darken(#30363e, 5%);
+    }
+  }
+}

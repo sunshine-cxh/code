@@ -1,0 +1,68 @@
+.procurement-add {
+
+  // 左侧--基本信息
+  .basic-infos__wrapper {
+    flex: 2;
+    min-width: 400px;
+    // max-width: 638px;
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+    }
+    .ant-form-item-label {
+      text-align: left;
+    }
+    .procurement-cycle {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .pub-title {
+    .title {
+      margin-bottom: 19px;
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      .icon-item {
+        margin: 0px 14px;
+      }
+      span {
+        margin-right: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+  // 右侧--表格操作区域
+  .operation-area__wrapper {
+    flex: 4;
+    .apply-info {
+      margin-bottom:30px;
+      .pub-title();
+    }
+    .link-file {
+      margin-top: 20px;
+      .pub-title();
+    }
+  }
+
+  .btn-footer-area {
+    text-align: center;
+    height: 100px;
+    button:first-child {
+      margin-right: 69px;
+    }
+    button:last-child {
+      margin-left: 69px;
+    }
+  }
+}
+.title-name{
+  font-size: 19px !important;
+  font-weight: bold !important;
+}
+.base-info-content{
+  margin-bottom:30px;
+}

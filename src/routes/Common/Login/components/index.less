@@ -1,0 +1,162 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../../../assets/styles/variables.less';
+
+.login-page {
+  background: url('../../../../assets/images/login_bg.jpg') no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  min-width: 530px;
+  .login-form {
+    width: 530px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    margin: 100px auto 52px;
+
+    .login-form-wrap {
+      width: 100%;
+      padding: 100px 50px;
+      background-color: #fff;
+      border-radius: 20px;
+      .login-form-head {
+        .image-logo {
+          width: 48px;
+          height: 48px;
+          margin-right: 8px;
+        }
+        .image-logo-name {
+          height: 48px;
+        }
+
+        .name {
+          font-size: 46px;
+          font-weight: 400;
+          letter-spacing: 3px;
+          color: @color-primary;
+        }
+      }
+
+      .customer {
+        margin: 4px auto 70px;
+        font-size: 24px;
+        font-weight: 400;
+        color: rgba(33, 67, 143, 1);
+        text-align: center;
+      }
+
+      .tab {
+        width: 240px;
+        margin: 42px auto;
+        .tab-item {
+          height: 32px;
+          line-height: 25px;
+          font-size: 16px;
+          color: @color-primary;
+          cursor: pointer;
+          &_active {
+            border-bottom: 2px solid @color-primary;
+          }
+        }
+      }
+
+      .form-form-area {
+        .form-item-user {
+          margin-bottom: 28px;
+        }
+
+        .form-item-password {
+          margin-bottom: 14px;
+        }
+
+        //clear ant-input style
+        .ant-input {
+          background-color: rgba(11, 161, 248, 0);
+          border: none;
+        }
+
+        .ant-input:not(:first-child) {
+          padding-left: 54px;
+        }
+
+        .login-input-item {
+          width: 100%;
+          height: 56px;
+          border: 1px solid rgba(154, 154, 154, 1);
+          border-radius: 4px;
+        }
+
+        .input-item-icon {
+          width: 20px;
+          margin-left: 6px;
+        }
+
+        @check-color: rgba(25, 109, 182, 1);
+
+        .checkbox-item {
+          font-size: 12px;
+          color: @check-color;
+        }
+
+        // clear ant-checkbox style
+        .ant-checkbox-inner {
+          width: 16px;
+          height: 16px;
+          border: 1px solid @check-color;
+          border-radius: none;
+          text-align: center;
+          background-color: #fff;
+        }
+
+        .ant-checkbox-checked .ant-checkbox-inner::after {
+          width: 6px;
+          height: 10px;
+          position: absolute;
+          top: 6px;
+          left: 3px;
+          display: table;
+          border: 1px solid rgba(25, 109, 182, 1);
+          border-top: 0;
+          border-left: 0;
+          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          opacity: 1;
+          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          content: ' ';
+        }
+
+        .ant-input-affix-wrapper .ant-input:focus {
+          border: none;
+          box-shadow: none;
+        }
+
+        .login-form-forgot {
+          font-size: 12px;
+          float: right;
+          color: rgba(15, 32, 75, 1);
+        }
+
+        .login-form-button {
+          width: 100%;
+          height: 60px;
+          font-size: 20px;
+          color: #fff;
+          background: rgba(15, 32, 75, 1);
+          font-weight: 500;
+          border-radius: 0;
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin: 80px auto 18px auto;
+    color: #fff;
+  }
+
+  .ant-spin-nested-loading > div > .ant-spin {
+    max-height: none;
+  }
+}

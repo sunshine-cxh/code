@@ -1,0 +1,260 @@
+.idmsv-linePatrol {
+  padding: 20px;
+  height: 100%;
+  
+  .chart-box{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .today-repaire-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #52ffff;
+    margin: 10px 0 10px 14px;
+  }
+
+  .linepatrol-map{
+    height: 100%;
+    background-color: #011449;
+    .map{
+      height: 100%;
+      width: 100%;
+    }
+    
+    .l7-ctrl-logo{
+      display: none;
+    }
+  }
+
+  .whole-part{
+    height: 100%;
+
+    .left-content{
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+    }
+    .right-content{
+      height: 100%;
+    }
+
+  }
+  .flow-box::before{
+    opacity: .3;
+  }
+  
+
+  .data-staff{
+
+    .today-staff{
+      font-size:20px;
+      font-weight:bold;
+      margin-top: 10px;
+      padding-left: 12px;
+      color:rgba(82,255,255,1);
+
+      height: 13%;
+    }
+    .data-list{
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      display: flex;
+      align-items: center;
+      // height: 40%;
+      padding-top: 5px;
+      justify-content: space-around;
+
+      height: 34%;
+      .data-box{
+        position: relative;
+        width: 90px;
+        height: 90px;
+        padding-top: 25px;
+        // .bg-icon{
+          // width: 100px;
+          // height: 100px;
+          // position: absolute;
+          // z-index: 1;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-image: url(../../../../../assets/images/big/situation-icon.png);
+        // }/
+
+        // .data-content{
+        //   position: absolute;
+        //   z-index: 2;
+        //   width: 100%;
+        //   top: 27px;
+          &>p:first-child{
+            width: 100%;
+            font-size: 17px;
+            font-weight: bold;
+            color: #52fefe;
+            margin-bottom: 0;
+            text-align: center;
+            
+          }
+
+          &>p:last-child{
+            width: 100%;
+            font-size:10px;
+            font-weight:400;
+            color:rgba(178,236,255,1);
+            margin-bottom: 0;
+            text-align: center;
+          }
+        // }
+      }
+    }
+
+    .next-icon{
+      width: 20px;
+      height: 23px;
+      margin-top: 38px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(../../../../../assets/images/big/next-icon.png);
+    }
+
+    .filter-line{
+      width: 91%;
+      margin: 4% auto;
+      height: 2px;
+      background: #561ee5;
+      opacity: 0.2;
+    }
+
+    .staff-situation{
+      display: flex;
+      width: 91%;
+      margin: 0 auto;
+      justify-content: space-between;
+
+    }
+
+    .in-line{
+      width: 140px;
+      display: flex;
+      &>div{
+        width: 48%;
+        text-align: center;
+      }
+
+      &>div:first-child{
+        // width: 156px;
+        margin-right: 15px;
+        img{
+          margin-bottom: 10%;
+        }
+  
+        .in-out-line{
+          font-size:16px;
+          font-weight:bold;
+          color:rgba(119,200,255,1);
+        }
+      }
+  
+      &>div:last-child{
+        width: 45%;
+  
+        &>div:first-child{
+          font-size:14px;
+          font-weight:400;
+          color:rgba(178,236,255,1);
+        }
+  
+        &>div:last-child{
+          font-size:44px;
+          font-weight:bold;
+          color:rgba(255,173,1,1);
+        }
+      }
+
+    }
+
+    
+
+
+  }
+
+
+  // map的浮层样式
+  .cus-popup {
+    .l7-popup-content {
+      background: transparent url('../../../../../assets/images/big/trans.png') no-repeat center center;
+      background-size: 250px 200px;
+      height: 200px;
+      width: 250px;
+      position: relative;
+
+      .cus-popup-title {
+        position: absolute;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        left: 28px;
+        top: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 17px;
+      }
+      .cus-popup-content {
+        padding: 64px 0 0 20px;
+        // display: flex;
+        
+        &>div:first-child{
+          line-height: 20px;
+          height: 25px;
+          font-size: 17px;
+          color: #33d3eb;
+          margin-bottom: 20px;
+        }
+
+        &>div:last-child{
+          line-height: 20px;
+          height: 25px;
+          font-size: 17px;
+          color: #FFDD00;
+        }
+      }
+      
+    }
+    
+    .l7-popup-tip {
+      display: none;
+    }
+  }
+
+  .filter-box{
+    display: flex;
+    justify-content: space-between;
+    .people-list{
+      width:45% !important;
+      &>div{
+        border-radius: 4px;
+      }
+    }
+
+    .date-select{
+      width:45% !important;
+      &>div>input{
+        border-radius: 4px !important;
+      }
+      
+    }
+    .people-list-btn, .date-list-btn{
+      width:45% !important;
+      color: #fff;
+      background-color: rgba(8, 120, 155, .6);
+      border: none;
+    }
+  }
+  .l7-marker{
+    z-index:2 !important ;
+  }
+}

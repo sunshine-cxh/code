@@ -1,0 +1,629 @@
+@import '../../../../assets/styles/variables.less';
+@import '../../../../assets/styles/flex.less';
+@-webkit-keyframes activeTransform {
+  0% {
+    -webkit-transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+@-moz-keyframes activeTransform {
+  0% {
+    -moz-transform: translateY(100px);
+  }
+  100% {
+    -moz-transform: translateY(0px);
+  }
+}
+@-ms-keyframes activeTransform {
+  0% {
+    -ms-transform: translateY(100px);
+  }
+  100% {
+    -ms-transform: translateY(0px);
+  }
+}
+@keyframes activeTransform {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.active-animation {
+  -webkit-animation: activeTransform 0.3s ease alternate;
+  -ms-animation: activeTransform 0.3s ease alternate;
+  -moz-animation: activeTransform 0.3s ease alternate;
+  animation: activeTransform 0.3s ease alternate;
+}
+.geography-home-box {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.geography-home {
+  position: relative;
+  height: 100%;
+
+  .geography-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .map {
+      height: 100%;
+    }
+    .legend {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      z-index: 1000;
+      .legendImg {
+        width: 100px;
+        height: 100px;
+      }
+
+      .ant-checkbox-wrapper {
+        position: relative;
+        border-radius: 4px;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgb(134, 132, 132);
+        border: 2px solid #fff;
+
+        .ant-checkbox-inner {
+          border: none;
+          background: none;
+        }
+        .ant-checkbox {
+          position: absolute;
+          top: 0;
+          left: 0;
+          & + span {
+            padding: 0;
+          }
+        }
+        &:hover {
+          border: 2px solid #1890ff;
+        }
+        &.ant-checkbox-wrapper-checked {
+          border: 2px solid #1890ff;
+          .ant-checkbox-checked {
+            background: #1890ff;
+          }
+        }
+      }
+    }
+  }
+
+  .panel-search,
+  .search-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    .geography-home-box();
+    .search {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: rgba(255, 255, 255, 1);
+      z-index: 2000;
+      .search-icon {
+        font-size: 20px;
+        line-height: 40px;
+      }
+      &-bar {
+        position: relative;
+        padding: 2px 0;
+        border-radius: 4px;
+        .flexbox();
+        .geography-home-box();
+        .logo {
+          height: 30px;
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1;
+        }
+        & *,
+        &:active *,
+        &:focus *,
+        &:focus-within *,
+        &:visited * {
+          border: none;
+          box-shadow: none;
+        }
+        .certain-category-input {
+          padding: 0 40px;
+        }
+        .certain-category-icon {
+          padding-right: 30px;
+          font-size: 20px;
+          color: #78909c;
+          &:hover {
+            color: #dbdee2;
+          }
+        }
+        .search-list-icon {
+          width: 42px;
+          height: 45px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 20px;
+          line-height: 45px;
+          text-align: center;
+          z-index: 10;
+          &:hover {
+            color: #dbdee2;
+          }
+        }
+      }
+      &-list {
+        width: 400px;
+        transform: translateX(0px);
+
+        &.active {
+          .active-animation();
+        }
+
+        &-title {
+          padding: 0 20px;
+          background: #1890ff;
+          position: relative;
+
+          .search-icon {
+            color: #fff;
+          }
+          .search-close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+          }
+        }
+
+        &-content {
+          background: #f0f2f5;
+          padding: 5px;
+          .search-tool {
+            background: #fff;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            .search-icon {
+              color: #7c8196;
+              padding-left: 10px;
+              &:hover {
+                color: #dbdee2;
+              }
+              &.active {
+                color: #1890ff;
+              }
+            }
+          }
+          .search-tabs {
+            position: relative;
+            padding-bottom: 50px;
+          }
+          .ant-tabs-bar {
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            width: 100%;
+          }
+          .ant-tabs-nav-scroll {
+            border-radius: 3px;
+            margin-bottom: 5px;
+
+            .ant-tabs-nav {
+              width: 100%;
+              .ant-tabs-ink-bar {
+                background: #fff;
+              }
+              .ant-tabs-tab {
+                padding: 0;
+                margin: 0;
+                width: 45%;
+                &:first-of-type {
+                  margin-right: 7%;
+                }
+                .btn {
+                  width: 100%;
+                  background: #fff;
+                }
+                .anticon {
+                  margin: 0;
+                }
+                &.ant-tabs-tab-active {
+                  .btn {
+                    border-color: #1890ff;
+                    color: #1890ff;
+                  }
+                }
+                .search-icon {
+                  color: #04398c;
+                  padding: 0 10px;
+                  &:hover {
+                    color: #1890ff;
+                  }
+                }
+              }
+            }
+          }
+          &-main {
+            background: #fff;
+            border-radius: 3px;
+            padding: 10px;
+            .module-tree {
+              max-height: 400px;
+              overflow: auto;
+              .ant-tree-node-content-wrapper {
+                position: relative;
+                .ant-tree-title {
+                  .tree-title {
+                    display: inline-block;
+                  }
+                  .slider-opacity {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    margin: 0;
+                    padding: 0;
+                    width: 20px;
+                  }
+                }
+                .ant-tree-iconEle {
+                  .slider-icon {
+                    padding: 0;
+                    color: #1890ff;
+                  }
+                }
+              }
+            }
+          }
+          .product-list {
+            background: #fff;
+            padding: 10px;
+            .product-item {
+              padding: 10px;
+              .flexbox();
+              .search-icon {
+                color: rgba(0, 0, 0, 0.65);
+                line-height: 20px;
+              }
+              .product-name {
+                display: inline-block;
+                font-size: 16px;
+                line-height: 20px;
+                padding-left: 10px;
+              }
+            }
+          }
+          &-btn {
+            margin-top: 5px;
+            .btn {
+              width: calc(50% - 5px);
+              border: none;
+              &:hover {
+                background: #1890ff;
+                color: #fff;
+              }
+              &:first-of-type {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .panel-tool {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 4px;
+    z-index: 1000;
+    .ant-tabs-nav .ant-tabs-tab {
+      margin: 0;
+    }
+    .ant-tabs-bar {
+      margin: 0;
+      background: #fff;
+    }
+    .ant-tabs-ink-bar {
+      display: none !important;
+    }
+    .tool-list {
+      border-radius: 4px;
+      width: 517px;
+      .ant-tabs-tab {
+        padding: 12px 0;
+        &:nth-child(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          .tool-item {
+            border-right: 1px dashed #7c8196;
+          }
+        }
+        .tool-item {
+          cursor: pointer;
+          color: #7c8196;
+          padding: 0 16px;
+          .flexbox();
+
+          .tool-icon {
+            font-size: 18px;
+            line-height: 18px;
+          }
+          .tool-name {
+            display: block;
+            padding-left: 5px;
+            color: #7c8196;
+            font-size: 12px;
+            line-height: 18px;
+          }
+          &:hover {
+            .tool-icon,
+            .tool-name {
+              color: #dbdee2;
+            }
+          }
+        }
+        &.ant-tabs-tab-active {
+          .tool-item {
+            .tool-icon,
+            .tool-name {
+              color: #1890ff;
+            }
+          }
+        }
+      }
+    }
+    .tool-main {
+      margin-top: 10px;
+      .tool-content {
+        width: 400px;
+        background: #fff;
+        padding: 10px;
+        .geography-home-box();
+      }
+      .condition-content {
+        padding-top: 10px;
+        .condition-time {
+          min-width: 0;
+          line-height: 40px;
+          font-size: 16px;
+          .flexbox();
+          .flexbox();
+          .condition-label {
+            width: 20%;
+            color: #999;
+            font-size: 12px;
+          }
+          .condition-main {
+            width: 75%;
+            color: #999;
+            font-size: 12px;
+            &.condition-week {
+              .flexbox();
+              span {
+                width: 12%;
+                text-align: center;
+                cursor: pointer;
+                &.active {
+                  color: #1890ff;
+                }
+                &.weekActive {
+                  width: 26%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .tool-main-title {
+        position: relative;
+        .flexbox();
+        .ant-radio-group {
+          margin: 0 !important;
+        }
+        .tool-rate {
+          position: absolute;
+          right: 0;
+          top: 0;
+          .flexbox();
+          span {
+            padding: 0 10px;
+            line-height: 32px;
+          }
+          .tool-state {
+            margin-top: 12px;
+            .flexbox();
+            .tool-state-icon {
+              height: 8px;
+              width: 24px;
+              display: block;
+              margin-right: 2px;
+              &:first-of-type {
+                background: #34b000;
+              }
+              &:nth-of-type(2) {
+                background: #fecb00;
+              }
+              &:nth-of-type(3) {
+                background: #df0100;
+              }
+              &:last-of-type {
+                margin-right: 0;
+                background: #8e0e0b;
+              }
+            }
+          }
+        }
+      }
+      .ant-collapse {
+        border: none;
+      }
+      .tool-main-list {
+        .tool-range {
+          margin: 0 auto 10px;
+          border-radius: 4px;
+          overflow: hidden;
+          border: 1px solid #9a9a9a;
+          &.ant-collapse-item-active {
+            .ant-collapse-header {
+              background: #1890ff;
+              border-radius: 0;
+              border-color: #1890ff;
+              .tool-range-title {
+                color: #fff;
+              }
+            }
+            border-color: #1890ff;
+          }
+          .ant-collapse-header {
+            background: #fff;
+            padding: 0 10px;
+            color: #9a9a9a;
+            .tool-range-title {
+              .flexbox();
+              position: relative;
+              .tool-range-icon {
+                padding-right: 10px;
+              }
+              p,
+              .tool-range-icon {
+                margin: 0;
+                line-height: 40px;
+              }
+            }
+            .ant-collapse-arrow {
+              display: none !important;
+            }
+          }
+          .ant-collapse-content > .ant-collapse-content-box {
+            padding: 10px;
+          }
+          .tool-range-desc {
+            background: #fff;
+            color: #1890ff;
+            text-align: center;
+            font-size: 20px;
+            margin: 0;
+            cursor: pointer;
+            p {
+              text-align: center;
+              color: #9a9a9a;
+            }
+          }
+        }
+        .tool-range-btn {
+          width: 100%;
+          height: 40px;
+          background: #1890ff;
+          line-height: 40px;
+          color: #fff;
+          border: none;
+        }
+      }
+      .tool-content-edit {
+        width: 381px;
+        .ant-form-item {
+          margin-bottom: 10px;
+        }
+        .ant-form-item-label {
+          width: 20%;
+          text-align: left;
+        }
+        .ant-form-item-control-wrapper {
+          width: 80%;
+        }
+        .antui-input,
+        .ant-input {
+          border-radius: 4px;
+        }
+        .ant-form-item-control-wrapper {
+          padding-left: 20px;
+        }
+        &-btn-list {
+          padding-left: 25%;
+          .edit-btn {
+            width: 28%;
+            &:first-of-type {
+              margin-right: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .table {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    transform: translateX(0px);
+    z-index: 3000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    &.active {
+      .active-animation();
+    }
+    .antui-search .ant-input {
+      border-radius: 4px;
+    }
+    &-title {
+      padding: 10px;
+      h2 {
+        font-size: 16px;
+        color: #7c8196;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+      }
+      .table-tool {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        .flexbox();
+        .table-icon {
+          font-size: 20px;
+          line-height: 40px;
+          color: #7c8196;
+          padding-left: 10px;
+          &:hover {
+            color: #dbdee2;
+          }
+        }
+      }
+    }
+    &-content {
+      height: 200px;
+      tr {
+        height: 40px;
+      }
+    }
+  }
+  .panel-screen {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 10;
+    padding: 0 10px;
+    cursor: pointer;
+    .flexbox();
+    .tool-icon,
+    span {
+      line-height: 40px;
+      color: #7c8196;
+    }
+    span {
+      padding-left: 10px;
+    }
+  }
+}

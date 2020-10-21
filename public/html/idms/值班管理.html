@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="">
+ <meta name="author" content="Mosaddek">
+ <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+ <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+ <title>值班管理</title>
+
+ <!-- Bootstrap core CSS -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/bootstrap-reset.css" rel="stylesheet">
+ <!--external css-->
+ <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+ <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+ <!--right slidebar-->
+ <link href="css/slidebars.css" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="css/style.css" rel="stylesheet">
+ <link href="css/style-responsive.css" rel="stylesheet" />
+ <link href="css/laydate.css" rel="stylesheet"/>
+ <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+     .popup-box{display:-webkit-box;display:none;align-items:center; justify-content:center;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(49,47,47,0.4);z-index:1000;}
+     .popup-content{border-top-left-radius:2em;border-top-right-radius:2em;position:absolute\9;left:40%\9;top:40%\9;margin-left:-225px\9;margin-top:-94px\9;position:relative;width:500px;background:#fff;}
+     .popup-content h1{padding:8px 0;color:#333;font-size:16px;text-align:left;background:#D0CECE;}
+     .popup-content p{padding:40px 0;color:#666;text-align:center;font-size:14px;}
+     .popup-content .btn-box{padding-bottom:20px\9;margin-bottom:20px;text-align:center;}
+     .popup-content .btn-box button{width:auto;height:32px;padding:0 10px;display:inline-block;outline:none;margin:0;border:0 none;color:#fff;background:#fa631a;border-radius:3px;cursor:pointer;}
+     .popup-content .btn-box button+button{margin-left:10px;}
+     .popup-content .btn-box button:hover{background:#F17A44;}
+     .popup-content .closed-box{position:absolute;right:0;top:0;padding:0 10px;height:37px;line-height:37px;color:#333;font-size:24px;cursor:pointer;}
+     .popup-content .closed-box:hover{color:#f00;}
+     
+     .demo-input{padding-left: 10px; height: 30px; min-width: 262px; line-height: 30px; border: 1px solid #e6e6e6;  background-color: #fff;  border-radius: 2px;}
+     .demo-footer{padding: 50px 0; color: #999; font-size: 14px;}
+     .demo-footer a{padding: 0 5px; color: #01AAED;}
+
+     .table-hover>tbody>tr:hover{
+      background: #ddeeff;
+    }
+    
+    .modal-header{ height:50px;background: #203864;}
+  </style>
+</head>
+<body>
+ <section id="container" class="">
+   <section class="wrapper site-min-height">
+    <header class="panel-heading" style="font-weight: bold;">值班管理
+     <button type="button" class="ant-btn ant-btn-primary" style="float:right" id="submit" data-toggle="modal" href="#myModal"><span>＋添 加</span></button>  
+   </header> 
+   <!-- page start-->
+   <div id="morris">
+    <div class="row">
+      <div class="col-lg-12">
+       <section class="panel">                         
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th width="70px">详情</th>
+              <th>日期段</th>
+              <th>名称</th>
+              <th>排班人</th>
+              <th>排班日期</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:bold;"><a href="javascript:;" class="ml-5" onClick="Detail('2019-09-30','2019-10-06','9月第五周值班表','张三','2019-08-25');">＋</a></td>
+              <td>2019-09-30至2019-10-06</td>
+              <td>9月第五周值班表</td>
+              <td>张三</td>
+              <td>2019-08-25</td>
+              <td>
+               <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button>
+             </td>
+           </tr>                            
+           <tr>
+            <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-09-23','2019-09-29','9月第四周值班','张三','2019-08-25');">＋</a></td>
+            <td>2019-09-23至2019-09-29</td>
+            <td>9月第四周值班表</td>
+            <td>张三</td>
+            <td>2019-08-25</td>
+            <td><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-09-16','2019-09-22','9月第三周值班表','张三','2019-08-25');">＋</a></td>
+            <td >2019-09-16至2019-09-22</td>
+            <td>9月第三周值班表</td>
+            <td>张三</td>
+            <td>2019-08-25</td>
+            <td>
+             <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+           </tr>
+           <tr>
+            <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-09-09','2019-09-15','9月第二周值班表','张三','2019-08-25');">＋</a></td>
+            <td>2019-09-09至2019-09-15</td>
+            <td>9月第二周值班表</td>
+            <td>张三</td>
+            <td>2019-08-25</td>
+            <td>
+              <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-09-02','2019-09-08','9月第一周值班表','张三','2019-08-25');">＋</a></td>
+              <td>2019-09-02至2019-09-08</td>
+              <td>9月第一周值班表</td>
+              <td>张三</td>
+              <td>2019-08-25</td>
+              <td>
+                <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+              </tr>
+              <tr>
+                <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-08-26','2019-09-01','8月第四周值班表','刘林','2019-07-30');">＋</a></td>
+                <td>2019-08-26至2019-09-01</td>
+                <td>8月第四周值班表</td>
+                <td>刘林</td>
+                <td>2019-07-30</td>
+                <td>
+                  <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-08-19','2019-08-25','8月第三周值班表','刘林','2019-07-30');">＋</a></td>
+                  <td>2019-08-19至2019-08-25</td>
+                  <td>8月第三周值班表</td>
+                  <td>刘林</td>
+                  <td>2019-07-30</td>
+                  <td>
+                   <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+                 </tr>
+                 <tr>
+                  <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-08-12','2019-08-18','8月第二周值班','刘林','2019-07-30');">＋</a></td>
+                  <td>2019-08-12至2019-08-18</td>
+                  <td>8月第二周值班表</td>
+                  <td>刘林</td>
+                  <td>2019-07-30</td>
+                  <td>
+                   <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button></td>
+                 </tr>
+                 <tr>
+                  <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-08-05','2019-08-11','8月第一周值班表','刘林','2019-07-30');">＋</a></td>
+                  <td>2019-08-05至2019-08-11</td>
+                  <td>8月第一周值班表</td>
+                  <td>刘林</td>
+                  <td>2019-07-30</td>
+                  <td>
+                   <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+                 </tr>
+                 
+                 <tr>
+                  <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-07-29','2019-08-04','7月第五周值班表','刘林','2019-06-20');">＋</a></td>
+                  <td>2019-07-29至2019-08-04</td>
+                  <td>7月第五周值班表</td>
+                  <td>刘林</td>
+                  <td>2019-06-20</td>
+                  <td>
+                    <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-07-22','2019-07-28','7月第四周值班表','刘林','2019-06-20');">＋</a></td>
+                    <td>2019-07-22至2019-07-28</td>
+                    <td>7月第四周值班表</td>
+                    <td>刘林</td>
+                    <td>2019-06-20</td>
+                    <td>
+                      <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:bold"><a href="javascript:;" class="ml-5" onClick="Detail('2019-07-15','2019-07-21','7月第三周值班','刘林','2019-06-20');">＋</a></td>
+                      <td>2019-07-15至2019-07-21</td>
+                      <td>7月第三周值班表</td>
+                      <td>刘林</td>
+                      <td>2019-06-20</td>
+                      <td>
+                        <button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>打 印</span></button> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 模态框 -->
+        <div class="modal fade top-modal-without-space " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog" style="margin-top: 40px;">
+           <div class="modal-content-wrap">
+             <div class="modal-content">
+               <div class="modal-body">
+                 <section class="panel">
+                   <header class="panel-heading">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title">值班管理</h4>
+                   </header>
+                   <div class="panel-body">
+                    <form role="form">
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">排班名称：</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">开始日期：</label>
+                      <input id="StartDate" type="text" class="demo-input form-control" placeholder="请选择日期">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">结束日期：</label>
+                      <input id="EndDate" type="text" class="demo-input form-control" placeholder="请选择日期">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">排班人：</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" value="">
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </div>
+            <div class="modal-footer">
+             <button data-dismiss="modal" class="ant-btn ant-btn-cancel" type="button">关闭</button>
+             <button data-dismiss="modal" class="ant-btn ant-btn-primary" type="button">提交</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- 模态框end -->
+ </section>
+ 
+ <!-- js placed at the end of the document so the pages load faster -->
+ <!-- js placed at the end of the document so the pages load faster -->
+ <script src="js/jquery.js"></script>
+ <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+ <script src="js/bootstrap.min.js"></script>
+ <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+ <script src="js/jquery.scrollTo.min.js"></script>
+ <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+ <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+ <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+ <script src="js/respond.min.js" ></script>
+ <script src="js/WdatePicker.js" ></script>
+ <!-- antd -->
+ <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+ <script src="./assets/react/antd.min.js"></script>
+ <!--common script for all pages-->
+ <script src="js/common-scripts.js"></script>
+ <script src="js/laydate.js"></script>
+ <!-- script for this page only-->
+
+ <script type="text/javascript">
+       //执行一个laydate实例
+       laydate.render({
+  elem: '#StartDate' //指定元素
+});
+       laydate.render({
+  elem: '#EndDate' //指定元素
+});
+       $(".closed-box").click(function() {
+        $(".popup-box").css("display", "none");
+      });
+       
+       function Openfrom()
+       {
+        $(".popup-box").css("display", "block");
+      }
+      
+      function Cancel()
+      {
+        $(".popup-box").css("display", "none");
+      }
+      function Submit()
+      {
+       if($("#ClassName").val().length <=0)
+       {
+         alert("排班名称不能为空。");
+         return false;
+       }
+       if($("#StartDate").val().length <=0)
+       {
+         alert("开始日期不能为空。");
+         return false;
+       }
+       if($("#EndDate").val().length <=0)
+       {
+         alert("结束日期不能为空。");
+         return false;
+       }
+       alert("排班信息新增成功！");
+       $(".popup-box").css("display", "none");
+     }
+     function Detail(a,b,c,d,e)
+     {
+      $("#ClassName").val(c);
+      $("#StartDate").val(a);
+      $("#EndDate").val(b);
+      $("#CreateDate").val(e);
+      $("#Create").val(d);
+      $(".popup-box").css("display", "block");
+    }
+  </script>
+  <style type="text/css">
+    .modal-body label {
+      text-align: right;
+      width: 20%;
+      margin-right: 20px;
+      font-weight: 400;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .form-control{
+      display: inline-block;
+      width: 60%;
+    }
+    .ant-btn-cancel {
+      border-color: #203854;
+    }
+    .panel{
+      margin-bottom: 0;
+    }
+  </style>
+</body>
+</html>

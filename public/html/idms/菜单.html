@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+    <title>菜单</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+ 
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <link href="common/css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="common/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="common/css/lib/weather-icons.css" rel="stylesheet" />
+    <link href="common/css/lib/mmc-chat.css" rel="stylesheet" />
+    <link href="common/css/lib/sidebar.css" rel="stylesheet">
+    <link href="common/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="common/css/lib/simdahs.css" rel="stylesheet">
+    <link href="common/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff!important;
+        }
+        .menSpan{
+            display: block;
+            font-size: 12px;
+        }
+        .nano-content ul>li{
+            position: relative;
+        }
+        .subUl{
+            background: #fff!important;
+            visibility: visible;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        #searchInput{
+
+            margin: 0;
+        }
+        #searchInput:hover,#searchInput:focus{
+            border: 1px solid #203864;
+        }
+        #avarte{
+            border: 1px solid #203864!important;
+        }
+        .top-nav .nav .caret,.top-nav .nav .caret:hover{
+            border-top-color: #203864;
+        }
+        .dropdown-menu,.top-nav .username{
+            color: #203864;
+        }
+        .dropdown-menu.extended.logout > li:last-child{
+            background: #203864;
+        }
+        .logo {
+            display: none;
+            width: auto!important;
+        }
+        .notify-row {
+            margin-left: 0!important;
+        }
+        .top-nav  {
+            float: right;
+        }
+        .system-name {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+            font-size: 24px;
+            color: #21438f;
+            font-weight: bold;
+        }
+        .system-name .system-name-symbol {
+            display: inline-block;
+            margin: 0 3px;
+            vertical-align: top;
+        }
+    </style>
+  </head>
+
+  <body class="sidebar-hide" style="background:#e2e2e2">
+
+  <section id="container" class="">
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content" >
+                <ul  style="background: #203864;" id="menuUl">
+                    <!-- <li class="label">Main</li> -->
+                    <li class="active">
+                        <a href="javascript:;"> 
+                            <i class="fa fa-dashboard fa-dash"></i>
+                            <sapn class="menSpan" style="padding-left: 10px;padding-right: 10px;margin-top: 3px;">预测管理</span>
+                        </a>
+                        <ul>
+                            <li><a  href="负荷预测.html" target="right">负荷预测</a></li>
+                            <li><a  href="工况预测.html" target="right">工况预测</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-laptop fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">气源管理</span>
+                        </a>
+                        <ul>
+                            <li><a  href="采购计划及优化.html" target="right">采购计划及优化</a></li>
+                            <li><a  href="合同及交付管理.html" target="right">合同及交付管理</a></li>
+                            <li><a  href="结算管理.html" target="right">结算管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-book fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">输配管理</span>
+                        </a>
+                        <ul>
+                            <li><a  href="当前工况分析.html" target="right">当前工况分析</a></li>
+                            <li><a  href="调度令管理.html" target="right">调度令管理</a></li>
+                            <li><a  href="重点用户管理.html" target="right">重点用户管理</a></li>
+                            <li><a  href="监控管理.html" target="right">监控管理</a></li>
+                            <li><a  href="值班管理.html" target="right">值班管理</a></li>
+                            <li><a  href="交接班管理.html" target="right">交接班管理</a></li>
+                            <li>
+                                <a  href="javascript:;">报警管理</a>
+                                <ul class="subUl">
+                                    <li><a  href="报警设置.html" target="right">报警设置</a></li>
+                                    <li><a  href="报警信息管理.html" target="right">报警信息管理</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">安全应急管理</span>
+                        </a>
+                        <ul >
+                            <!--<li><a  href="#" target="right">事故管道追溯</a></li>-->
+                            <li><a  href="应急预案.html" target="right">安全应急预案</a></li>
+                            <li><a  href="事故工况分析.html" target="right">事故工况分析</a></li>
+                            <li><a  href="人员及设备管理.html" target="right">人员及设备管理</a></li>
+                            <li><a  href="放散管理.html" target="right">放散管理</a></li>
+                            <li><a  href="工单管理.html" target="right">工单管理</a></li>
+                            <li><a  href="事故报告.html" target="right">事故报告</a></li>
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs fa-dash"></i>
+                            <span  class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">设备管理</span>
+                        </a>
+                        
+                        <ul >
+                            <li><a  href="阀门.html" target="right">阀门</a></li>
+                            <li><a  href="流量调节阀.html" target="right">流量调节阀</a></li>
+                            <li><a  href="调压器.html" target="right">调压器</a></li>
+                        </ul>
+                    </li>
+                    <!--<li >
+                        <a href="javascript:;">
+                            <i class="fa fa-th fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">管网优化</span>
+                        </a>
+                        <ul >
+                            <li><a  href="optimizationPlan.html " target="right">管网优化方案</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li >
+                        <a href="javascript:;" >
+                            <i class=" fa fa-envelope fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">系统能力评价</span>
+                        </a>
+                        <ul >
+                            <li><a  href="404.html" target="right">管网承载率分析</a></li>
+                            <li><a  href="404.html" target="right">市场发展</a></li>
+                            <li><a  href="404.html" target="right">远期规划</a></li>
+                            <li><a  href="404.html" target="right">风险边界</a></li>
+                        </ul>
+                    </li>-->
+                    <li>
+                        <a  href="模型仓.html" target="right">
+                            <i class="fa fa-bar-chart-o fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">模型仓</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="javascript:;" >
+                            <i class="fa fa-paste fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">KPI管理</span>
+                        </a>
+                        <ul >
+                            <li><a  href="生产经营报表.html" target="right">生产经营报表</a></li>
+                            <li><a  href="知识仓.html" target="right">知识仓</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="仿真共享工作台.html" target="right">
+                            <i class="fa fa-users fa-dash"></i>
+                            <span class="menSpan" style="padding-left: 15px;padding-right: 15px;margin-top: 3px;">仿真共享工作台</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div><!-- /# sidebar -->
+        
+    <!--header start-->
+    <header class="header white-bg">
+        <!--logo start-->
+        <a href="菜单.html" class="logo white-bg" >
+        </a>
+        <!--logo end-->
+        <div class="system-name" style="margin: 0;height: 55px;padding-top: 5px;" >
+            <img src="./img/logo.jpg" alt="" style="height: 45px;">
+            率真<span class="system-name-symbol">®</span>智能输配运营管理平台系统
+        </div>
+        <div class="nav notify-row" id="top_menu"></div>
+        <div class="top-nav ">
+            <ul class="nav pull-right top-menu">
+                <li>
+                    <input type="text" id="searchInput" class="form-control search" placeholder="Search">
+                </li>
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" id="avarte" class="dropdown-toggle" href="#">
+                        <img alt="" src="img/avatar1_small.jpg">
+                        <span class="username">MaoJie</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <div class="log-arrow-up"></div>
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>概述</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
+                        <li><a href="#"><i class="fa fa-bell-o"></i> 通知</a></li>
+                        <li><a href="login.html"><i class="fa fa-key"></i> 注销</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside></aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <div></div>
+        <div id="main-content-div" style="left:80px;top:50px;position: fixed;bottom: 0;right: 0;" >
+            <iframe scrolling="auto" rameborder="0" src="负荷预测.html" name="right" width="100%" height="100%" style="border-width:0px;"></iframe>
+        </div>  
+    </section>
+    <!--main content end-->
+    
+      
+  </section>
+    <script src="common/js/lib/jquery.min.js"></script><!-- jquery vendor -->
+    <script src="js/jquery.js"></script>
+    <script src="common/js/lib/jquery.nanoscroller.min.js"></script><!-- nano scroller -->    
+    <script src="common/js/lib/sidebar.js"></script><!-- sidebar -->
+    <script src="common/js/lib/bootstrap.min.js"></script><!-- bootstrap -->
+    <script src="common/js/lib/mmc-common.js"></script>
+    <script src="common/js/lib/mmc-chat.js"></script>
+    
+    <!--common script for all pages-->
+    <!-- <script src="js/common-scripts.js"></script> -->
+     <script type="text/javascript">
+    $(function(){
+        let owidth = window.innerWidth - 75 +"px";
+        let oheight = window.innerHeight  - 70 +"px";
+        $("#menuUl").css({"height": window.innerHeight-56+"px"});
+        // $("#main-content-div").css({"height":oheight,"width":owidth});
+        console.log(owidth,oheight)
+    })
+    // <!--设置点中菜单的背景色-->
+    var li = document.querySelectorAll('.nano-content li');
+    for (var i = 0; i < li.length; i++)
+        li[i].onclick = function () {
+            for (var i = 0; i < li.length; i++) li[i].className = '';
+            this.className='active';
+        }
+</script>
+
+  </body>
+</html>

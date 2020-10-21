@@ -1,0 +1,40 @@
+.modal-permission {
+  .role-permission-wrap {
+    padding: 0 14px;
+
+    .module-tree {
+      padding: 20px 0;
+      height: 610px;
+      overflow-y: scroll;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 0;
+    max-height: 100% !important;
+    overflow: auto;
+
+    .organizationPermissionTree-wrap {
+      .left {
+        // height: 556px;
+      }
+      .right {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  //重写 tabs 样式
+  .ant-tabs-tabpane,
+  .ant-tabs-tabpane-active {
+    padding: 20px 0 !important;
+  }
+
+  //改写side高度
+  .side-panel {
+    min-height: 500px;
+    .panel-body {
+      max-height: 500px;
+    }
+  }
+}

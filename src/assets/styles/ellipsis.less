@@ -1,0 +1,27 @@
+/*
+ * @Descripttion : ellipsis超出省略... 
+ * @Author       : wuhaidong
+ * @Date         : 2019-12-18 17:04:56
+ * @LastEditors  : wuhaidong
+ * @LastEditTime : 2020-04-28 11:44:46
+ */
+ 
+.ellipsis (@lines: 1, @max-height: initial) {
+  // Fallback for non-webkit browsers.
+  // Fallback does not render ellipsis.
+  overflow: hidden;
+  max-height: @max-height;
+
+  // Webkit solution for multiline ellipsis
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @lines;
+
+  // Solution for Opera
+  text-overflow: -o-ellipsis-lastline;
+}
+
+.ellipsis-2 {
+  .ellipsis(2);
+}
+

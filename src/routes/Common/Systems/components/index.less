@@ -1,0 +1,47 @@
+@import '../../../../assets/styles/variables.less';
+
+.systems-page {
+  background: url('../../../../assets/images/login_bg.jpg') no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  min-width: 1510px;
+
+  .head {
+    margin: 80px auto 18px auto;
+    font-size: 30px;
+    color: #fff;
+    min-width: 1000px;
+  }
+
+  .list-wrap {
+    width: 1510px;
+    margin: 70px auto 0 auto;
+    .item {
+      width: 350px;
+      height: 350px;
+      margin-right: 230px;
+      margin-bottom: 84px;
+      color: @color-primary;
+      background-color: #fff;
+      cursor: pointer;
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+      .icon-item {
+        font-size: 100px;
+      }
+      .title {
+        font-size: 20px;
+        margin-top: 43px;
+        color: @color-primary;
+      }
+      &:hover {
+        color: #fff;
+        background-color: #51b1f6;
+        .title {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

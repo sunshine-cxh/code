@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/flex.less';
+
+.operate-home-page {
+  .forecast-wrap {
+    padding-top: 70px;
+    .ant-form-item-label {
+      //局部重写 antd
+      text-align: left;
+    }
+    .forecast-submit-button {
+      width: 100%;
+      height: 48px;
+      margin-top: 40px;
+      background: rgba(4, 57, 140, 1);
+    }
+
+    .forecast-result {
+      margin-top: 70px;
+      text-align: center;
+      strong {
+        width: 190px;
+        height: 51px;
+        font-size: 70px;
+        font-family: Arial;
+        font-weight: 400;
+        color: rgba(37, 153, 215, 1);
+        line-height: 25px;
+      }
+      span {
+      }
+    }
+  }
+
+  .chart-y-tips {
+    position: absolute;
+    top: 54px;
+  }
+
+  // .chart-x-tips{
+  //   position: absolute;
+  //   bottom: 54px;
+  //   // right: -10px;
+  //   z-index: 1000;
+  // }
+}

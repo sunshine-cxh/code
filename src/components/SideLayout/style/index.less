@@ -1,0 +1,76 @@
+@import '~antd/lib/style/themes/default.less';
+// 可滑动的布局组件
+.antui-side-layout {
+  > .ant-layout-sider {
+    background: #fff;
+    max-width: 220px !important;
+    flex: 0 0 220px !important;
+    .side-handle {
+      position: absolute;
+      text-align: center;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+      width: 13px;
+      line-height: 38px;
+      height: 38px;
+      border-left: 1px solid #e8e8e8;
+      background: #eee;
+      z-index: 2;
+      transition: right 0.3s;
+      i {
+        transform: scale(0.8);
+      }
+    }
+    &.ant-layout-sider-zero-width {
+      border: 0;
+      .side-handle {
+        right: -12px;
+        background: transparent;
+      }
+    }
+
+    .side-body {
+      height: 100%;
+      .side-panel {
+        border-radius: 0;
+        height: 100%;
+        position: relative;
+        max-height: 766px;
+        overflow: auto;
+        width: 220px !important;
+        .panel-header {
+          height: 38px;
+          line-height: 38px;
+          padding-left: 10px;
+          border-bottom: 1px solid #e8e8e8;
+        }
+        .panel-body {
+          padding-top: 16px;
+          .ant-tree {
+            height: 100% !important;
+          }
+          &.has-title {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  > .ant-layout-content {
+    border-left: 1px solid #e8e8e8;
+    margin-left: -1px;
+    position: relative;
+    overflow: auto;
+    background-color: #fff;
+    .ant-table-small {
+      border: none;
+      border-radius: 0px;
+    }
+  }
+
+  .modal-panel {
+    padding: 26px 0 0 10px;
+    margin-bottom: 7px;
+  }
+}

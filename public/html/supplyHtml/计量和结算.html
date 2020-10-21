@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+    <title>计量和结算</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+      <!--right slidebar-->
+      <link href="css/slidebars.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+		<link href="css/style-responsive.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./assets/react/antd.min.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+   <style type="text/css">
+    .alignment{text-align:right;width:80px}
+
+/*#table1 thead tr {
+display:block;
+}
+#table1 tbody {
+display: block;
+height: 200px;
+overflow: auto;
+}*/
+
+#table1 tbody {
+display: block;
+}
+#table1 thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+#tables tbody {
+display: block;
+/* height: 130px; */
+/* overflow-y:scroll; */
+}
+#tables thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+  .btnDefut,.btnSuccess{
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 2px;
+            color: #333;
+        }
+        .btnDefut:hover{
+            border: 1px solid #3399ff;
+            color: #3399ff;
+        }
+        .btnSuccess:hover{
+            border: 1px solid #3399ff;
+            color: #3399ff;
+        }
+        .btn-group label{
+            background: #fff;
+            color: #333;
+            border: none;
+            border-bottom:2px solid #ccc
+
+		}
+		.btn-group label:hover,
+		.btn-group label:active,
+		.btn-group label:visited,
+		.btn-group label:focus,
+		.btn-group label.active.focus {
+				color: #203864;
+				background: #fff!important;
+				outline: none!important;
+				border-color: transparent transparent #203864 transparent!important;
+		}
+		.btn-group .btn {
+			padding: 0;
+		}
+		.btn-group .btn a{
+			display: block;
+			padding: 6px 12px;
+		}
+		.btn-group label.active{
+				border-bottom:2px solid#203864;
+				background: #fff;
+				color: #203864;
+		}
+		.table-hover>tbody>tr:hover{
+				background: #ddeeff;
+		}
+		.form-control {
+			display: inline-block!important;
+			margin-right: 16px;
+		}
+		ul.pagination {
+			margin-bottom: 0;
+		}
+		ul.pagination li {
+			float: nonessss;
+			margin-left: 0!important;
+		}
+		
+		.ant-btn-other{background:#fff;border-color:#203864;color:#203864;}
+   </style>
+  </head>
+  <body>
+   <section id="container" class="">
+          <section class="wrapper site-min-height">		  
+              <!-- page start-->
+             <div id="morris">
+			   <div class="row">
+			    <div class="col-lg-12">
+				   <section class="panel">
+                           <div class="btn-row">
+                              <div class="btn-group" data-toggle="buttons" style="margin-top:7px; margin-left:16px">
+                                 <label class="btn btn-default active">
+                                      <a data-toggle="tab" href="#UpperReaches">&nbsp;&nbsp;计量管理&nbsp;&nbsp;</a>
+                                  </label>
+                                  <label class="btn btn-default">
+                                      <a data-toggle="tab" href="#downstream">&nbsp;&nbsp;结算管理&nbsp;&nbsp;</a>
+                                  </label>                                  
+                              </div>
+							 </div>
+                          </header>
+                          <div class="panel-body">
+                            <div class="tab-content">
+                              <div id="UpperReaches" class="tab-pane active">
+                                     <section class="panel">									 
+		                            	<header class="panel-heading">
+		                                  体积计量 
+		                                </header>	
+										  <table class="table table-hover" id="tables">
+										  <thead>
+										  <tr>
+											  <th style="width:15%">序号</th>
+											  <th>门站</th>
+											  <th>来源</th>
+											  <th>上游体积抄表数(Nm³)</th>
+											  <th>门站体积抄表数(Nm³)</th>	
+										  </tr>
+										  </thead>
+										  <tbody>
+										   <tr>
+											  <td style="width:15%">1</td>
+											  <td>求雨岭</td>
+											  <td>西二线</td>
+											  <td>7775020</td>
+											  <td>7100000</td>	
+										  </tr>
+										   <tr>
+											  <td style="width:15%">2</td>
+											  <td>迭福</td>
+											  <td>中石油</td>
+											  <td>6378824</td>
+											  <td>6170000</td>	
+										  </tr>  
+										  </tbody>
+										  </table>
+									  </section>
+									  <section class="panel">
+										  	<header class="panel-heading">
+			                                  热值计量 
+			                                </header>									 
+										  <table class="table table-hover" id="tables">
+										  <thead>
+										  <tr>
+											  <th style="width:15%">序号</th>
+											  <th>门站</th>
+											  <th>来源</th>
+											  <th>上游热值抄表数(MJ)</th>
+											  <th>门站热值抄表数(MJ)</th>	
+										  </tr>
+										  </thead>
+										  <tbody>
+										  <tr>
+											  <td style="width:15%">1</td>
+											  <td>坪山</td>
+											  <td>大鹏</td>
+											  <td>551000</td>
+											  <td>533110</td>	
+										  </tr>
+										  <tr>
+											  <td style="width:15%">1</td>
+											  <td>安托山</td>
+											  <td>大鹏</td>
+											  <td>499000</td>
+											  <td>482250</td>	
+										  </tr>
+										  <tr>
+											  <td style="width:15%">1</td>
+											  <td>华安</td>
+											  <td>华安</td>
+											  <td>514000</td>
+											  <td>505890</td>	
+										  </tr>									  
+										  </tbody>
+										  </table>
+									  </section>
+                             </div>								  
+								  
+						    <div id="downstream" class="tab-pane">
+							  <section class="panel">									 
+							  <table class="table table-hover" id="table1">
+							  <thead style="width:100%">
+							  <tr>
+								  <th>序号</th>
+								  <th>客户</th>
+								  <th>当前公司开始使用日期</th>
+								  <th>状态</th>	
+								  <th>操作</th>	
+							  </tr>
+							  </thead>
+							  <tbody>
+								  <tr>
+					               <td>1</td>
+					               <td>钰湖电厂</td>
+					               <td>2016/07/09</td>
+					               <td>使用中</td>
+					               <td> 
+					                 <a data-toggle="modal" href="#myModal"><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>查 看</span></button></a>
+					               </td>
+					             </tr>
+					             <tr>
+					               <td>2</td>
+					               <td>宝昌电厂</td>
+					               <td>2016/07/09</td>
+					               <td>使用中</td>
+					               <td> 
+					                 <a data-toggle="modal" href="#myModal"><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>查 看</span></button></a>
+					               </td>
+					             </tr>
+					             <tr>
+					               <td>3</td>
+					               <td>华电分布式</td>
+					               <td>2016/07/09</td>
+					               <td>使用中</td>
+					               <td> 
+					                 <a data-toggle="modal" href="#myModal"><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>查 看</span></button></a>
+					               </td>
+					             </tr>
+					             <tr>
+					               <td>4</td>
+					               <td>南天电厂</td>
+					               <td>2016/07/09</td>
+					               <td>使用中</td>
+					               <td> 
+					                 <a data-toggle="modal" href="#myModal"><button type="button" class="ant-btn" style="background:#fff;border-color:#203864;color:#203864;"><span>查 看</span></button></a>
+					               </td>
+					             </tr>
+							  </tbody>
+								</table>
+								<div style="text-align: center">
+										<nav aria-label="Page navigation">
+											<ul class="pagination">
+												<li>
+													<a href="#" aria-label="Previous">
+														<span aria-hidden="true">&laquo;</span>
+													</a>
+												</li>
+												<li><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li><a href="#">4</a></li>
+												<li><a href="#">5</a></li>
+												<li>
+													<a href="#" aria-label="Next">
+														<span aria-hidden="true">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+								</div>
+							  </section>
+							  
+						    </div>                                 
+                              </div>
+                          </div>
+                      </section>
+				</div>
+			   </div> 
+             </div>
+
+              <!-- page end-->
+          </section>
+	 </section>
+  
+   <!-- js placed at the end of the document so the pages load faster -->
+ <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <!-- <script src="js/echarts.min.js"></script> -->
+  <!--right slidebar-->
+  <script src="js/slidebars.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!-- antd -->
+		<!-- <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+		<script src="./assets/react/antd.min.js"></script> -->
+    <!-- script for this page only-->
+    <!-- <script src="js/contractManage.js" charset="gb2312"></script> -->
+	
+	<script type="text/javascript"> 
+	   function implement(a)
+	   {
+          if($('#Reply'+a).val().length >0)
+		  {
+	         $('#Reply'+a).attr('readonly','readonly');
+			 $('#btnimplement'+a).attr("disabled", true);
+			 alert("审批成功！");
+		  }
+	   }
+	</script>
+
+	<script>
+		$(function() {
+			$('#echart2').width($('#echart1').width());
+			$('#echart3').width($('#echart1').width());
+			$('.btn-group label.btn').click(function() {
+				$('.btn-group label.btn').removeClass('active');
+				$(this).addClass('active');
+				myChart2.setOption(option2);
+      	myChart3.setOption(option3);
+			})
+      
+		})
+	</script>
+  </body>
+  
+  </html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="">
+ <meta name="author" content="Mosaddek">
+ <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+ <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+ <title>管网优化方案</title>
+
+ <!-- Bootstrap core CSS -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/bootstrap-reset.css" rel="stylesheet">
+ <!--external css-->
+ <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+ <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+ <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css" />
+ <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css" />
+ <!--right slidebar-->
+ <link href="css/slidebars.css" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="css/style.css" rel="stylesheet">
+ <link href="css/style-responsive.css" rel="stylesheet" />
+ <style type="text/css">
+  .col-lg-6 {width:34%;float:left}
+  .col-lg-12{width:65%;float:left}
+  #Table1 th{text-align:right;}
+  #Table2 th{text-align:right;}
+  
+  .modal-body label {
+    text-align: right;
+    width: 20%;
+    margin-right: 20px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .form-control{
+    display: inline-block;
+    width: 50%;
+  }
+  .label-detail{margin-left:65px}
+  .input-detail{margin-left:15px}
+  .label-top{margin-top:8px}
+</style>
+</head>
+<body>
+  <section id="container" class="">
+    <section class="wrapper site-min-height">
+      <header class="panel-heading" style="font-weight: bold;">管网优化方案</header>     
+      <!-- page start-->
+      <div id="morris">
+       <div class="row"> 
+        <div class="col-lg-6">
+         
+          <!-- page start-->			  
+          <section class="panel" style="display: block;height: 320px;overflow-y:scroll;">  
+            <form role="form">
+              <div class="form-group label-top">
+                <label for="exampleInputEmail1">选中管道：</label>
+                <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="D2507">
+              </div>                
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">长度：</label>
+                <input type="text" class="form-control input-detail" id="caliber" >m
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">外径：</label>
+                <input type="text" class="form-control input-detail" id="caliber1">mm
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">材料：</label>
+                <input type="text" class="form-control input-detail" id="caliber2" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">粗糙度：</label>
+                <input type="text" class="form-control" id="caliber3">
+              </div>
+              <div style="height:1px; background:#E0E0E0;"></div>
+              <div class="form-group label-top">
+                <label for="exampleInputEmail1">选中管道：</label>
+                <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="D2207">
+              </div>                
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">长度：</label>
+                <input type="text" class="form-control input-detail" id="caliber" >m
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">外径：</label>
+                <input type="text" class="form-control input-detail" id="caliber1">mm
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">材料：</label>
+                <input type="text" class="form-control input-detail" id="caliber2" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">粗糙度：</label>
+                <input type="text" class="form-control" id="caliber3">
+              </div>
+              <div style="height:1px; background:#E0E0E0;"></div>
+              <div class="form-group label-top">
+                <label for="exampleInputEmail1">选中管道：</label>
+                <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="D2407">
+              </div>                
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">长度：</label>
+                <input type="text" class="form-control input-detail" id="caliber" >m
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">外径：</label>
+                <input type="text" class="form-control input-detail" id="caliber1">mm
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">材料：</label>
+                <input type="text" class="form-control input-detail" id="caliber2" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="label-detail">粗糙度：</label>
+                <input type="text" class="form-control" id="caliber3">
+              </div>							
+            </form>             
+          </section>
+          <div style="height:3px; background:#E0E0E0;"></div>
+          <section class="panel" style="display: block;height: 170px;overflow-y:scroll;">
+           <form role="form">
+            <div class="form-group label-top">
+              <label for="exampleInputEmail1">选中节点：</label>
+              <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="ID13542">
+            </div>                
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="label-detail">小时流量：</label>
+              <input type="text" class="form-control" id="caliber" >Nm³/h
+            </div>
+            <div style="height:1px; background:#E0E0E0;"></div>
+            <div class="form-group label-top">
+              <label for="exampleInputEmail1">选中节点：</label>
+              <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="ID14230">
+            </div>                
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="label-detail">小时流量：</label>
+              <input type="text" class="form-control" id="caliber" >Nm³/h
+            </div>
+            <div style="height:1px; background:#E0E0E0;"></div>
+            <div class="form-group label-top">
+              <label for="exampleInputEmail1">选中节点：</label>
+              <input type="text" class="form-control" id="TubeName" value="DN250" readonly="true" value="ID12795">
+            </div>                
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="label-detail">小时流量：</label>
+              <input type="text" class="form-control" id="caliber" >Nm³/h
+            </div>
+          </form>
+        </section>
+        <div class="modal-footer">
+          <button type="button" class="ant-btn ant-btn-primary" id="submit"><span>工况模拟</span></button>&nbsp;&nbsp;
+          <button type="button" class="ant-btn" style="line-width:3px;border-color:#203864;color:#203864;borderWidth:3px;" id="Save"><span>保存方案</span></button>	
+          &nbsp;&nbsp;<button type="button" class="ant-btn ant-btn-primary" id="Save"><span>方案导出</span></button>				
+        </div>
+      </div>
+      
+      <div class="col-lg-12">
+        <!-- <div id="allmap" style="height:480px"></div> -->
+        <!-- 图片放大缩小 -->
+        <div id="pageContent">
+          <div id="imgContainer">
+            <div class="zoomableContainer">
+              <img id="imageFullScreen" src="./img/png1.png" style="height: 500px;">
+            </div>
+          </div>
+        </div>
+        <!-- 图片放大缩小end -->
+        <section class="panel">
+                         <!--  <header class="panel-heading">
+                             管网信息
+                           </header> -->
+                           <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>管网最低压力点</th>
+                                <th>管网最低压力值</th>
+                                <th>管网最低允许压力</th>
+                                <th>管网最高允许压力</th>
+                                <th>管存量</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>D59477</td>
+                                <td>300 kPa</td>
+                                <td>6000 kPa</td>
+                                <td>10000 kPa</td>
+                                <td>100000 m³</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </section>                                         
+                      </div>  
+                    </div>
+                  </div>
+                </section>
+              </section>
+              <!-- js placed at the end of the document so the pages load faster -->
+              <!-- js placed at the end of the document so the pages load faster -->
+              <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=PctVdd9tneA0AYtmGx0xzjhRjTin1qqP"></script>
+              <script src="js/baiduMap.js"></script>
+              <script src="js/jquery.js"></script>
+              <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+              <script src="js/bootstrap.min.js"></script>
+              <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+              <script src="js/jquery.scrollTo.min.js"></script>
+              <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+              <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+              <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+              <script src="js/respond.min.js" ></script>
+
+              <!--right slidebar-->
+              <script src="js/slidebars.min.js"></script>
+              <!-- antd -->
+              <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+              <script src="./assets/react/antd.min.js"></script>
+              <!--common script for all pages-->
+              <script src="js/common-scripts.js"></script>
+              
+              <script type="text/javascript">
+                
+               $("#btn1").click(function() {		    
+                 if($("#attribute1").val().length <=0)
+                 {
+                   alert("方案一的参数不能为空！");
+                   $("#attribute1").focus();
+                   $("#mastpressure1").text('');
+                   $("#minpressure1").text('');
+                   $("#Highestpressure1").text('');
+                   $("#Custody1").text('');
+                   return false;
+                 }
+                 $("#mastpressure1").text('290 kPa');
+                 $("#minpressure1").text('6050 kPa');
+                 $("#Highestpressure1").text('10100 kPa');
+                 $("#Custody1").text('90000 m³');
+               });
+               
+               $("#btn2").click(function() {		    
+                 if($("#attribute2").val().length <=0)
+                 {
+                   alert("方案二的参数不能为空！");
+                   $("#attribute2").focus();
+                   $("#mastpressure2").text('');
+                   $("#minpressure2").text('');
+                   $("#Highestpressure2").text('');
+                   $("#Custody2").text('');
+                   return false;
+                 }
+                 $("#mastpressure2").text('320 kPa');
+                 $("#minpressure2").text('6150 kPa');
+                 $("#Highestpressure2").text('9900 kPa');
+                 $("#Custody2").text('95000 m³');
+               });
+             </script>
+             <!-- 图片放大缩小 -->
+             <script src="./js/e-smart-zoom-jquery.min.js"></script>
+             <script>
+              $(function() {  
+                $('#imageFullScreen').smartZoom({'containerClass':'zoomableContainer'});        
+                $('#topPositionMap,#leftPositionMap,#rightPositionMap,#bottomPositionMap').bind("click", moveButtonClickHandler);
+                $('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+                
+                function zoomButtonClickHandler(e){
+                  var scaleToAdd = 0.8;
+                  if(e.target.id == 'zoomOutButton')
+                    scaleToAdd = -scaleToAdd;
+                  $('#imageFullScreen').smartZoom('zoom', scaleToAdd);
+                }        
+                
+                function moveButtonClickHandler(e){
+                  var pixelsToMoveOnX = 0;
+                  var pixelsToMoveOnY = 0;           
+                  
+                  switch(e.target.id){
+                    case "leftPositionMap":
+                    pixelsToMoveOnX = 50;
+                    break;
+                    
+                    case "rightPositionMap":
+                    pixelsToMoveOnX = -50;
+                    break;
+                    
+                    case "topPositionMap":
+                    pixelsToMoveOnY = 50;
+                    break;
+                    
+                    case "bottomPositionMap":
+                    pixelsToMoveOnY = -50;
+                    break;
+                  }
+                  $('#imageFullScreen').smartZoom('pan', pixelsToMoveOnX, pixelsToMoveOnY);
+                } 
+              });
+            </script>
+            <!-- 图片放大缩小end -->
+          </body>
+          
+          </html>

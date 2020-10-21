@@ -1,0 +1,52 @@
+@import '../../../assets/styles/variables.less';
+
+// 样式重写
+.navbar-popup {
+  margin-top: 30px !important;
+  padding-top: 0px !important;
+  box-shadow: 0px 0px 6px 2px rgba(4, 57, 140, 0.3);
+
+  .ant-popover-inner {
+    z-index: 10;
+    .ant-popover-inner-content {
+      padding: 0;
+      // 列表样式
+      .list-group-item {
+        min-width: 80px;
+        overflow: hidden;
+        display: block;
+        padding: 10px 12px;
+        line-height: 1;
+        color: @color-primary;
+        cursor: pointer;
+        &.active {
+          color: rgba(37, 153, 215, 1);
+          i {
+            color: rgba(37, 153, 215, 1);
+          }
+        }
+        & > i {
+          padding-right: 5px;
+          color: @color-primary;
+          font-size: 16px !important;
+        }
+        &:hover {
+          color: rgba(37, 153, 215, 1);
+          i {
+            color: rgba(37, 153, 215, 1);
+          }
+        }
+      }
+    }
+  }
+  .ant-popover-arrow {
+    top: -5px !important;
+    width: 0;
+    height: 0;
+    border-top-color: rgba(255, 255, 255, 0) !important;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    z-index: 0;
+  }
+}

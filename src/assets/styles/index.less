@@ -1,0 +1,156 @@
+/*
+ * @Descripttion : 全局样式
+ * @Author       : wuhaidong
+ * @Date         : 2019-12-18 17:04:56
+ * @LastEditors  : wuhaidong
+ * @LastEditTime : 2020-07-16 10:38:31
+ */
+
+@import '~antd/lib/style/themes/default.less';
+@import './iconfont.less';
+@import './animate.css';
+@import './flex.less';
+@import './ellipsis.less';
+
+html,
+body,
+:global(#root) {
+  //重写antd 样式可以这里重写
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media print {
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background: transparent !important;
+    border-color: #333 !important;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner:after {
+    border-color: #333 !important;
+  }
+}
+
+@media (min-width: 576px) {
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    z-index: 30;
+    width: 6px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #c1c1c1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+  }
+}
+
+body {
+  font-family: 'Monospace Number', 'Chinese Quote', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+  &:active {
+    color: @primary-7;
+  }
+  &:hover {
+    color: @primary-6;
+  }
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 1px;
+}
+
+//去除自动填充颜色
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* 重写antd默认布局样式 */
+.ant-layout {
+  // background-color: #F7F9FF;
+  .ant-layout-header {
+    height: auto;
+    line-height: normal;
+    padding: 0;
+  }
+
+  .ant-layout-content {
+    position: relative;
+    min-height: auto; // override antd min-height: 0;
+  }
+}
+
+//浮动
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+// 清理浮动
+.clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+//绝对定位
+.absolute-box {
+  position: absolute;
+}
+
+.absolute-full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

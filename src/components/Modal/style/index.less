@@ -1,0 +1,116 @@
+.ant-modal-wrap {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  .antui-modalform.ant-modal {
+    &.full-modal {
+      position: absolute;
+      top: 44px !important;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+
+      .ant-modal-content {
+        height: 100%;
+        position: relative;
+        .ant-modal-close {
+          .ant-modal-close-x {
+            height: 54px;
+            width: 76px;
+            font-size: 20px;
+            color: #0f204b;
+          }
+        }
+        .ant-modal-header {
+          padding: 16px 28px;
+          .ant-modal-title {
+            font-weight: 400;
+            font-size: 24px;
+            color: rgba(15, 32, 75, 1);
+          }
+        }
+
+        .ant-modal-body {
+          padding: 20px 0 60px 0;
+          position: absolute;
+          top: 55px;
+          bottom: 80px;
+          left: 0;
+          right: 0;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        .ant-modal-footer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: center;
+          background-color: #fff;
+          padding: 30px 0;
+          display: flex;
+          justify-content: space-around;
+          z-index: 10000;
+        }
+      }
+    }
+    //form modal 右边padding为60px;
+    &.antui-modalform-custom {
+      .ant-modal-body {
+        padding-left: 28px !important;
+        padding-right: 60px !important;
+      }
+    }
+    //是否隐藏body 滚动条
+    &.hidden-y-scrollbar {
+      .ant-modal-body {
+        overflow-y: hidden !important;
+      }
+    }
+
+    &.antui-table-modal {
+      .ant-modal-header {
+        .with-search-title {
+          display: flex;
+          align-items: center;
+          .left-title {
+            flex: auto;
+          }
+          .antui-searchbar {
+            margin-right: 25px;
+          }
+        }
+      }
+      .ant-modal-body {
+        padding: 0;
+        max-height: 96% !important;
+        overflow: auto;
+      }
+      .ant-modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .footer-left {
+          margin-right: 140px;
+        }
+        .ant-pagination {
+          flex: auto;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .filterModal .ant-modal-content .ant-modal-body {
+    padding: 0 !important;
+    margin-top: -1px;
+  }
+  .filterModal .antui-side-layout {
+    min-height: 743px;
+    margin-bottom: 50px;
+  }
+  .filterModal .antui-datatable {
+    padding-right: 15px;
+  }
+}

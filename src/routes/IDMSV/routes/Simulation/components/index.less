@@ -1,0 +1,175 @@
+.idmsv-simulation {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  .flex-start {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  .flex-center {
+    display: flex;
+    justify-content: flex-center;
+    height: 100%;
+  }
+  .flex-end {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .chart-box{
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .today-gas-title{
+    font-size:20px;
+    font-weight:bold;
+    color:rgba(82,255,255,1);
+    margin-bottom: 3px;
+  }
+  .chart-y-tips{
+    position:absolute;
+    top: 44px;
+    left: 17px;
+  }
+  .chart-y-tips2{
+    position:absolute;
+    top: 54px;
+    left: 17px;
+  }
+  .simulation-map {
+    height: 100%;
+    position: relative;
+    padding: 2%;
+    .simulation-tab {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 240px;
+      height: 40px;
+      z-index: 9;
+      display: flex;
+      color: #ffffff;
+      >div{
+        width:110px;
+        line-height: 36px;
+        height:36px; 
+        border-radius:2px;
+        position: relative;
+        .layout {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width:110px;
+          background:linear-gradient(0deg,rgba(0,228,255,1) 17%,rgba(0,186,255,1) 98%);
+          opacity:0.6;
+          line-height: 36px;
+          height:36px;
+          border-radius:2px;
+          text-align: center;
+        }
+        .active {
+          opacity: 1;
+        }
+        p {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width:110px;
+          line-height: 36px;
+          height:36px;
+          border-radius:2px;
+          text-align: center;
+          z-index: 11;
+        }
+      }
+      
+    }
+    .map {
+      height: 100%;
+      width: 100%;
+    }
+    .cus-popup {
+      .l7-popup-content {
+        background: transparent url('../../../../../assets/images/big/trans.png') no-repeat center center;
+        background-size: 250px 200px;
+        height: 200px;
+        width: 250px;
+        position: relative;
+        .cus-popup-content {
+          padding: 50px 0 0 20px;
+          span{
+            
+            display: inline-block;
+            line-height: 20px;
+            height:25px;
+            font-size:14px;
+            font-family:Source Han Sans SC;
+            color:rgba(51,211,235,1);
+          }
+          .first-span {
+            width:110px;
+          }
+          .out-data {
+            color: #FFDD00;
+          }
+        }
+        .cus-popup-title {
+          position: absolute;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          left: 28px;
+          top: 0;
+        }
+      }
+      
+      .l7-popup-tip {
+        display: none;
+      }
+    }
+
+  }
+
+  .table-header{
+    margin-bottom: 9px;
+    font-size: 16px;
+    &>span{
+      display: inline-block;
+      width: 20%;
+      text-align: center;
+    }
+  }
+
+  .data-list-box{
+    overflow: auto;
+    height: calc(100% - 40px);
+  }
+  .scada-data-list{
+    // display: flex;
+    // justify-content: space-around;
+    display: flex;
+    &>span{
+      // display: inline-block;
+      width: 20%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // .l7-marker{
+  //   z-index:2 !important ;
+  // }
+  #l7-scene-0, .l7-scene{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+}

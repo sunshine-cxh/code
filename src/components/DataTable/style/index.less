@@ -1,0 +1,243 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../../assets/styles/variables.less';
+
+@datatable-prefix-cls: antui-datatable;
+
+.@{datatable-prefix-cls} {
+  table thead,
+  table tbody {
+    width: 100%;
+    overflow: hidden;
+
+    tr {
+      height: 50px;
+      .table-tree-cell {
+        // 树形表格特定样式
+        padding-left: 30px !important;
+      }
+    }
+  }
+  // &.table-row-alternate-color {
+  //   table thead,
+  //   table tbody {
+  //     tr:nth-child(odd) {
+  //       background: #fff;
+  //     }
+  //     tr:nth-child(even) {
+  //       background: rgba(243, 250, 255, 1);
+  //     }
+  //   }
+  // }
+
+  .ant-table-body {
+    margin: 0 !important;
+    .ant-table-row-hover {
+      background: #f1f6fd !important;
+      td {
+        background: #f1f6fd !important;
+      }
+    }
+  }
+
+  .ant-table-small {
+    border: 0;
+    border-radius: 0;
+    // .ant-table-content {
+    //   border: 1px solid #dcdcdc;
+    // }
+
+    .ant-table-thead > tr {
+      > th {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-left: 1px solid rgba(136, 221, 255, 0.4);
+        border-bottom: 0 !important;
+        background-color: rgba(
+          220,
+          239,
+          251,
+          1
+        ) !important;
+        color: #333;
+        // 表头不换行
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        &:first-child {
+          border-left: 0 !important;
+        }
+      }
+    }
+
+    .ant-table-tbody > tr {
+      &.ant-table-row-selected {
+        td {
+          background: rgba(243, 250, 255, 1) !important;
+        }
+      }
+      &:hover {
+        td {
+          background: rgba(243, 250, 255, 1) !important;
+        }
+      }
+      > td {
+        max-width: 240px;
+        word-wrap: break-word;
+        border-left: 1px solid rgba(136, 221, 255, 0.4);
+        border-bottom: 1px solid rgba(136, 221, 255, 0.4) !important;
+        &:first-child {
+          border-left: 0 !important;
+        }
+        .table-row-button {
+          .antui-icon {
+            font-size: 18px;
+            font-weight: 600;
+            color: #04398c;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-table-footer {
+    padding: 8px;
+  }
+  .ant-table-tbody > tr.ant-table-row-selected td {
+    background: #fffde7;
+  }
+  .ant-table-tbody > tr {
+    &.disabled > td {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+    }
+  }
+  .table-row-button {
+    button,
+    a {
+      border: none;
+      background-color: transparent;
+      height: 24px;
+      color: @color-primary;
+      padding: 0px 5px !important; // button 为 loading 时 新增
+      outline: none;
+      vertical-align: middle;
+      overflow: hidden;
+      > i {
+        font-size: 18px;
+        vertical-align: top;
+        margin-left: 0 !important; // button 为 loading 时 新增
+        &.anticon-spin + .anticon {
+          // button 为 loading 时 新增
+          display: none;
+        }
+      }
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: @color-highlight;
+      }
+      &:active,
+      &.active {
+        background-color: transparent;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: transparent;
+          color: #ccc;
+        }
+      }
+    }
+  }
+  .ant-form-item {
+    margin-bottom: 0;
+    position: relative;
+    .ant-form-item-children {
+      //隐藏滚轮控件
+      .ant-input-number {
+        width: 100%;
+        .ant-input-number-handler-wrap {
+          width: 0;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+//重写 antd Pagination 样式
+.div-footer,
+.page-footer {
+  text-align: end;
+  padding: 36px 0 24px;
+}
+.div-footer {
+  padding: 24px 0 0;
+}
+.page-footer {
+  padding: 36px 0 24px;
+}
+
+.ant-pagination {
+  .ant-pagination-mix();
+  &.mini {
+    margin-top: 36px;
+    .ant-pagination-mix();
+  }
+}
+
+.ant-pagination-mix {
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link,
+  .ant-pagination-item {
+    display: inline-block;
+    min-width: 28px;
+    height: 28px;
+    margin-right: 6px;
+    line-height: 28px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border: none;
+    border-radius: 4px;
+    outline: 0;
+    background: rgba(4, 57, 140, 1) !important;
+    color: #fff;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    a {
+      color: #fff;
+    }
+  }
+
+  .ant-pagination-disabled .ant-pagination-item-link {
+    cursor: not-allowed;
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    height: 30px;
+    line-height: 28px;
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .ant-pagination-options-size-changer.ant-select {
+    margin-right: 0;
+  }
+
+  .ant-pagination-item-active {
+    background: rgba(10, 110, 184, 1) !important;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../../../../assets/styles/flex.less';
+
+.transient-calculation {
+  position: relative;
+  .loading{
+    padding: 40px 0;
+  }
+  .selector-title {
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  .from-title {
+    margin: 40px 0 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .from-wrap {
+    .ant-form-item {
+      .flexbox();
+      .flex-align-items-center();
+
+      margin-right: 30px;
+
+      .ant-form-item-label {
+        text-align: left;
+        font-weight: 500;
+        color: #666;
+        margin-right: 6px;
+        min-width: 40px;
+      }
+      .equipment-label-title {
+        width: 66px;
+      }
+    }
+    .DeviceRegulator-wrap {
+      .ant-form-item {
+        width: 400px;
+      }
+    }
+    .Guest-wrap {
+      .ant-form-item {
+        width: 400px;
+      }
+    }
+  }
+  .tabs-wrap {
+    margin-top: 40px;
+    .ant-tabs-tab {
+      font-size: 20px;
+    }
+    .ant-tabs-tabpane {
+      padding: 0 !important;
+      margin-right: 40px;
+    }
+    .ant-form-item {
+      width: 320px;
+    }
+  }
+}

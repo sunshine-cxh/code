@@ -1,0 +1,161 @@
+@import '../../../../../assets/styles/flex.less';
+
+.NEOsteadyStateCalculation {
+  position: relative;
+  .loading {
+    padding: 40px 0;
+  }
+  .selector-title {
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  .from-title {
+    margin: 40px 0 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .from-wrap {
+    .ant-form-item {
+      .flexbox();
+      .flex-align-items-center();
+
+      margin-right: 30px;
+
+      .ant-form-item-label {
+        text-align: left;
+        font-weight: 500;
+        color: #666;
+        margin-right: 6px;
+        min-width: 40px;
+      }
+      .equipment-label-title {
+        width: 66px;
+      }
+    }
+    .DeviceRegulator-wrap {
+      .ant-form-item {
+        width: 400px;
+      }
+    }
+    .Guest-wrap {
+      .ant-form-item {
+        width: 400px;
+      }
+    }
+  }
+
+  .from-midtitle {
+    margin: 40px 0 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .flex_box_right_content {
+    margin-left: 286px;
+  }
+
+  .tabs-wrap {
+    margin-top: 40px;
+    .ant-tabs-tab {
+      font-size: 20px;
+    }
+    .ant-tabs-tabpane {
+      padding: 0 !important;
+      margin-right: 40px;
+    }
+    .ant-form-item {
+      width: 320px;
+    }
+  }
+
+  .abnormal {
+    .item-wrap {
+      .flexbox();
+      .flex-1();
+      .flex-direction-column();
+      border: 1px solid #ccc;
+
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+    }
+    .left {
+    }
+    .right {
+      margin-left: 30px;
+    }
+  }
+
+  .gis {
+    margin-top: 20px;
+    .item-wrap {
+      .flexbox();
+      .flex-1();
+      .flex-direction-column();
+    }
+    .left {
+      width: 800px;
+      height: 750px;
+      position: relative;
+      .neogis-img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .gis-modal-1 {
+        width: 400px;
+        height: 310px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        .gis-child-item {
+          .flexbox();
+          .flex-wrap-wrap();
+          width: 199px;
+          height: 154px;
+          z-index: 100;
+
+          .gis-child-item-child {
+            width: 65px;
+            height: 51px;
+            z-index: 10000;
+          }
+        }
+      }
+      .gis-modal-2 {
+        width: 400px;
+        height: 210px;
+        position: absolute;
+        right: 200px;
+        top: 310px;
+        .gis-child-item {
+          width: 400px;
+          height: 210px;
+        }
+      }
+      .gis-modal-3 {
+        width: 430px;
+        height: 220px;
+        position: absolute;
+        right: 340px;
+        top: 520px;
+        .gis-child-item {
+          width: 430px;
+          height: 220px;
+        }
+      }
+    }
+    .right {
+      width: 400px;
+      margin-left: 30px;
+    }
+  }
+}

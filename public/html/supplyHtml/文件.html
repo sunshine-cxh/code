@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>文件</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <style type="text/css">
+      .btn-info{
+        background-color: #203864!important;
+          border-color: #203864!important;
+      }
+      .btn-danger{
+        background-color: #fff!important;
+          border-color: #203864!important;
+          color: #203864!important;
+      }
+      .ant-btn{
+        border-color: #203864!important;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <!--main content start-->
+      <section class="wrapper">
+          <!-- page start-->
+          <section class="panel">
+              <header class="panel-heading">
+                  文件
+              </header>
+              <div class="panel-body">
+                  <form class="form-horizontal search-result">
+                      <div class="form-group">
+                          <a class="ant-btn ant-btn-cancel" data-toggle="modal" href="#myModal10">
+                              添加
+                          </a>
+                          <div class="col-lg-8 col-sm-8">
+                              <input type="text" class="form-control input-xxlarge">
+                          </div>
+                          <div class="col-lg-2">
+                              <button class="ant-btn ant-btn-primary" type="submit">查询</button>
+                          </div>
+                      </div>
+                  </form>
+                      <!--vertical center Modal start-->
+                      <div class="modal fade top-modal-without-space " id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" style="margin-top: 120px;">
+                              <div class="modal-content-wrap">
+                                  <div class="modal-content">
+                                      <div class="modal-body">
+                                        <section class="panel">
+                                            <header class="panel-heading">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">新增文件</h4>
+                                            </header>
+                                            <div class="panel-body">
+                                                <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">文件名称</label>
+                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="输入名称">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">业务类别</label>
+                                                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="输入温度等级"> -->
+                                                        <div id="business-category"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">文件分类</label>
+                                                        <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="输入日期类型"> -->
+                                                        <div id="file-category"></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputFile">文件上传</label>
+                                                        <input type="file" id="exampleInputFile">
+                                                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </section>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button data-dismiss="modal" class="ant-btn ant-btn-cancel" type="button">关闭</button>
+                                          <button data-dismiss="modal" class="ant-btn ant-btn-primary" type="button">提交</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- vertical center Modal end -->
+
+                  <table class="table table-hover file-search">
+                      <thead>
+                      <tr>
+                          <th>文件名称</th>
+                          <th class="hidden-phone">上传时间</th>
+                          <th class="hidden-phone">文件大小</th>
+                          <th class="hidden-phone">业务类别</th>
+                          <th class="hidden-phone">文件分类</th>
+                          <th class="hidden-phone">操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>
+                                <img alt="" src="img/file-search/doc.png">
+                                <strong>《深圳燃气人力资源手册》</strong>
+                            </td>
+                            <td class="hidden-phone">01.01.2012 </td>
+                            <td>56 MB</td>
+                            <td>人力资源</td>
+                            <td>企业标准</td>
+                            <td class="hidden-phone">
+                              <a class="btn btn-info btn-xs" data-toggle="modal" href="#"><i class="fa fa-download"></i> 下载 </a>
+                              <a href="#" class="btn btn-danger btn-xs"><i class="fa  fa-times-circle-o"></i> 删除 </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="" src="img/file-search/doc.png">
+                                <strong>《深圳燃气三礼服务手册》</strong>
+                            </td>
+                            <td class="hidden-phone">01.01.2012 </td>
+                            <td>56 MB</td>
+                            <td>客户服务</td>
+                            <td>企业标准</td>
+                            <td class="hidden-phone">
+                              <a class="btn btn-info btn-xs" data-toggle="modal" href="#"><i class="fa fa-download"></i> 下载 </a>
+                              <a href="#" class="btn btn-danger btn-xs"><i class="fa  fa-times-circle-o"></i> 删除 </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="" src="img/file-search/doc.png">
+                                <strong>《深圳燃气施工单位管理规定》</strong>
+                            </td>
+                            <td class="hidden-phone">01.01.2012 </td>
+                            <td>56 MB</td>
+                            <td>工程建设</td>
+                            <td>企业标准</td>
+                            <td class="hidden-phone">
+                              <a class="btn btn-info btn-xs" data-toggle="modal" href="#"><i class="fa fa-download"></i> 下载 </a>
+                              <a href="#" class="btn btn-danger btn-xs"><i class="fa  fa-times-circle-o"></i> 删除 </a>
+                            </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <div class="text-center">
+                      <ul class="pagination">
+                          <li><a href="#">«</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li><a href="#">»</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+          <!-- page end-->
+      </section>
+      <!--main content end-->
+      <!--footer start-->
+      <!-- <footer class="site-footer">
+          <div class="text-center">
+              2013 &copy; FlatLab by VectorLab.
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer> -->
+      <!--footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <!--common script for all pages-->
+		<script src="js/common-scripts.js"></script>
+		
+		<!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+
+		<script type="text/babel">
+			$(function() {
+				// 引入组件
+				const { Select } = antd;
+				
+				const businessCategory = $('#business-category')[0];
+				const fileCategory = $('#file-category')[0];
+
+				ReactDOM.render(
+					<Select defaultValue="0">
+						<Option value="0">设计规划</Option>
+						<Option value="1">工程建设</Option>
+						<Option value="2">客户服务</Option>
+						<Option value="3">生产运营</Option>
+						<Option value="4">人力资源</Option>
+						<Option value="5">安全运营</Option>
+						<Option value="6">其他</Option>
+					</Select>,
+					businessCategory
+				)
+				ReactDOM.render(
+					<Select defaultValue="0">
+						<Option value="0">政府文件</Option>
+						<Option value="1">国家标准</Option>
+						<Option value="2">行业标准</Option>
+						<Option value="3">企业标准</Option>
+						<Option value="4">其他</Option>
+					</Select>,
+					fileCategory
+				)
+			})
+		</script>
+		<style>
+			.ant-select {
+				width: 50%!important;
+			}
+			@media (min-width: 768px) {
+				.modal-dialog {
+					width: 400px!important;
+				}
+			}
+			.panel {
+				margin-bottom: 0;
+			}
+		</style>
+  </body>
+</html>

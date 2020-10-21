@@ -1,0 +1,611 @@
+/*
+ * @Descripttion : 字体图标 ：开发时因引用线上的，部署时要把图标文件下载下来
+ * @Author       : wuhaidong
+ * @Date         : 2019-12-18 08:46:13
+ * @LastEditors  : wuhaidong
+ * @LastEditTime : 2020-08-21 17:15:51
+ */
+
+// 本地字体图标
+// @font-face {
+//   font-family: 'iconfont' !important;
+//   src: url('../fonts/icomoon/icomoon.eot');
+//   src: url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+//     url('../fonts/icomoon/icomoon.woff') format('woff'),
+//     url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+//     url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// 线上字体图标
+@font-face {
+  font-family: 'iconfont'; /* project id 1723781 */
+  src: url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.eot');
+  src: url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1723781_j9hauqlrr7.svg#iconfont') format('svg');
+}
+
+// 定义字体图标初始样式
+.ilng {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 16px/1 iconfont;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+// ------------------------------------- 公共图标 start
+.ilng-reporting:before {
+  content: '\e742'; // 上报
+}
+.ilng-implement:before {
+  content: '\e743'; // 执行
+}
+.ilng-return:before {
+  content: '\e72b'; // 归还
+}
+.ilng-account-center:before {
+  content: '\e73b'; // 一级菜单-个人中心
+}
+.ilng-sendapproval:before {
+  content: '\e73e'; // 我发出的审批
+}
+.ilng-acceptapproval:before {
+  content: '\e741'; // 我收到的审批
+}
+.ilng-willapproval:before {
+  content: '\e73d'; // 待我审批
+}
+.ilng-userSetting:before {
+  content: '\e740'; // 设置
+}
+.ilng-signout:before {
+  content: '\e73f'; // 退出
+}
+.ilng-personalAffairs:before {
+  content: '\e72e'; // 个人事务
+}
+.ilng-screen-full:before {
+  content: '\e72c'; // 全屏
+}
+.ilng-switch-system:before {
+  content: '\e730'; // 系统切换
+}
+.ilng-notice:before {
+  content: '\e72f'; // 消息通知
+}
+.ilng-approval:before {
+  content: '\e6a0'; // 审批
+}
+.ilng-iow:before {
+  content: '\e73c'; // 官网管理中心
+}
+.ilng-igis:before {
+  content: '\e733'; // 地理信息
+}
+.ilng-ieams:before {
+  content: '\e734'; // 租户管理中心
+}
+.ilng-iscm:before {
+  content: '\e737'; // 供应链管理中心
+}
+.ilng-bigScreen:before {
+  content: '\e735'; // 大屏展示
+}
+.ilng-iams:before {
+  content: '\e736'; // 平台管理中心
+}
+.ilng-iems:before {
+  content: '\e739'; // 设备管理中心
+}
+.ilng-idms:before {
+  content: '\e73a'; // 燃气输配管理系统
+}
+.ilng-more:before {
+  content: '\e6aa'; // 更多
+}
+.ilng-fire:before {
+  content: '\e6ab'; // 火焰
+}
+.ilng-temperature:before {
+  content: '\e6a7'; // 温度
+}
+.ilng-flow:before {
+  content: '\e6a8'; // 流量
+}
+.ilng-pressure:before {
+  content: '\e6a9'; // 压力
+}
+.ilng-redispatch:before {
+  content: '\e69d'; // 重新分派
+}
+.ilng-dispatch:before {
+  content: '\e69c'; // 分派
+}
+.ilng-maintenance:before {
+  content: '\e69b'; // 维修管理
+}
+.ilng-leavemessage:before {
+  content: '\e69a'; // 留言
+}
+.ilng-copy:before {
+  content: '\e699'; // 复制
+}
+.ilng-dealwith:before {
+  content: '\e698'; // 设备处置
+}
+.ilng-inventory:before {
+  content: '\e696'; //  盘点
+}
+.ilng-detail:before {
+  content: '\e693'; // 查看
+}
+.ilng-product:before {
+  content: '\e694'; // 产品
+}
+.ilng-download:before {
+  content: '\e695'; // 下载
+}
+.ilng-select:before {
+  content: '\e692'; // 选择
+}
+.ilng-export:before {
+  content: '\e688'; // 导出
+}
+.ilng-play:before {
+  content: '\e68a'; // 播放/启动
+}
+.ilng-pause:before {
+  content: '\e68b'; // 暂停
+}
+.ilng-scrap:before {
+  content: '\e690'; // 报废
+}
+.ilng-about:before {
+  content: '\e618'; // 关于/概述
+}
+.ilng-down:before {
+  content: '\e61b'; // 下拉
+}
+.ilng-authority:before {
+  content: '\e62c'; // 权限
+}
+.ilng-function:before {
+  content: '\e657'; // 功能
+}
+.ilng-import:before {
+  content: '\e658'; // 导入
+}
+.ilng-edit:before {
+  content: '\e659'; // 编辑
+}
+.ilng-filter:before {
+  content: '\e65a'; // 筛选
+}
+.ilng-save:before {
+  content: '\e65b'; // 保存
+}
+.ilng-delete:before {
+  content: '\e65c'; // 删除
+}
+.ilng-user-authority:before {
+  content: '\e65d'; // 权限管理
+}
+.ilng-reset-password:before {
+  content: '\e65f'; // 重置密码
+}
+.ilng-cancle:before {
+  content: '\e660'; // 取消
+}
+.ilng-plus:before {
+  content: '\e65e'; // 加号
+}
+.ilng-upload:before {
+  content: '\e666'; // 上传
+}
+.ilng-revoke:before {
+  content: '\e668'; // 撤销
+}
+.ilng-print:before {
+  content: '\e669'; // 打印
+}
+.ilng-clear:before {
+  content: '\e66a'; // 清除/删
+}
+.ilng-scan:before {
+  content: '\e66b'; // 扫码
+}
+.ilng-reload:before {
+  content: '\e66d'; // 刷新
+}
+.ilng-seach:before {
+  content: '\e66e'; // 搜索
+}
+.ilng-check:before {
+  content: '\e66f'; // 多选框-空
+}
+.ilng-checked:before {
+  content: '\e670'; // 多选框-选
+}
+.ilng-menu-fold:before {
+  content: '\e672'; // 导航折叠
+}
+.ilng-menu-unfold:before {
+  content: '\e673'; // 导航不折叠
+}
+.ilng-purchase:before {
+  content: '\e674'; // 购置
+}
+.ilng-spareparts:before {
+  content: '\e675'; // 备件
+}
+.ilng-role:before {
+  content: '\e677'; // 角色
+}
+.ilng-simulation:before {
+  content: '\e678'; // 仿真
+}
+.ilng-forecast:before {
+  content: '\e679'; // 预测
+}
+.ilng-gassource:before {
+  content: '\e67b'; // 气源
+}
+.ilng-model:before {
+  content: '\e67e'; // 模型仓
+}
+.ilng-security:before {
+  content: '\e67f'; // 安全
+}
+.ilng-system-setting:before {
+  content: '\e681'; // 系统管理/设置
+}
+.ilng-kpi:before {
+  content: '\e682'; // kpi
+}
+.ilng-user:before {
+  content: '\e684'; // 用户
+}
+.ilng-patrol:before {
+  content: '\e687'; // 巡检
+}
+// ------------------------------------- 公共图标 end
+
+// ------------------------------------- 平台管理中心导航图标 start
+.ilng-iams-setting:before {
+  content: '\e715'; // 一级菜单-系统设置
+}
+.ilng-iams-user:before {
+  content: '\e6f5'; // 二级菜单-用户管理
+}
+.ilng-iams-organization:before {
+  content: '\e6f7'; // 二级菜单-组织机构
+}
+.ilng-iams-role:before {
+  content: '\e6f9'; // 二级菜单-角色管理
+}
+.ilng-iams-client:before {
+  content: '\e6fc'; // 二级菜单-客户端管理
+}
+.ilng-iams-masterData:before {
+  content: '\e6f4'; // 二级菜单-数据字典类别
+}
+.ilng-iams-masterDataItem:before {
+  content: '\e6fa'; // 二级菜单-数据字典
+}
+.ilng-iams-apiResource:before {
+  content: '\e6fd'; // 二级菜单-apiResource管理
+}
+.ilng-iams-enterprise:before {
+  content: '\e6fb'; // 二级菜单-企业管理
+}
+.ilng-iams-module:before {
+  content: '\e6f6'; // 二级菜单-系统模块
+}
+.ilng-iams-codeRule:before {
+  content: '\e6f8'; // 二级菜单-编码规则
+}
+// ------------------------------------ 平台管理中心导航图标 end
+
+// ------------------------------------ 官网管理中心导航图标 start
+.ilng-iow-topMenu-official:before {
+  content: '\e71b'; // 一级菜单-官网后台管理
+}
+.ilng-iow-subMenu-content:before {
+  content: '\e71d'; // 二级菜单-内容管理
+}
+.ilng-iow-subMenu-message:before {
+  content: '\e71c'; // 二级菜单-留言管理
+}
+.ilng-iow-subMenu-resume:before {
+  content: '\e71e'; // 二级菜单-简历管理
+}
+// ------------------------------------ 官网管理中心导航图标 end
+
+// ------------------------------------ 燃气输配管理系统导航图标 start
+.ilng-idms-topMenu-forecastManage:before {
+  content: '\e70e'; // 一级菜单-预测管理
+}
+.ilng-idms-topMenu-basicData:before {
+  content: '\e701'; // 一级菜单-基础数据
+}
+.ilng-idms-topMenu-workingConditionAnalysis:before {
+  content: '\e725'; // 一级菜单-工况分析
+}
+.ilng-idms-topMenu-gateStationOutput:before {
+  content: '\e71f'; // 一级菜单-门站输出
+}
+.ilng-idms-topMenu-regulatorStationOutput:before {
+  content: '\e726'; // 一级菜单-调压站输出
+}
+.ilng-idms-subMenu-loadForecasting:before {
+  content: '\e720'; // 二级菜单-负荷预测
+}
+.ilng-idms-subMenu-steadyStateCondition:before {
+  content: '\e727'; // 二级菜单-稳态工况分析
+}
+.ilng-idms-subMenu-transientCondition:before {
+  content: '\e72a'; // 二级菜单-瞬态工况分析
+}
+.ilng-idms-subMenu-gateStationData:before {
+  content: '\e722'; // 二级菜单-门站信息
+}
+.ilng-idms-subMenu-gateStationOutputData:before {
+  content: '\e724'; // 二级菜单-门站出口信息
+}
+.ilng-idms-subMenu-basicData:before {
+  content: '\e729'; // 二级菜单-调压站信息
+}
+.ilng-idms-subMenu-regulatorStationData:before {
+  content: '\e723'; // 二级菜单-调压站出口信息
+}
+.ilng-idms-subMenu-gateStationOutput:before {
+  content: '\e721'; // 二级菜单-门站输出
+}
+.ilng-idms-subMenu-regulatorStationOutput:before {
+  content: '\e728'; // 二级菜单-调压站输出
+}
+// ------------------------------------ 燃气输配管理系统导航图标 end
+
+// ------------------------------------ 供应链管理系统导航图标 start
+.ilng-iscm-forecastManage:before {
+  content: '\e70e'; // 一级菜单-预测管理
+}
+.ilng-iscm-loadManage:before {
+  content: '\e70a'; // 一级菜单-负载管理
+}
+.ilng-iscm-gasSourceManage:before {
+  content: '\e70d'; // 一级菜单-气源管理
+}
+.ilng-iscm-distributionManage:before {
+  content: '\e70b'; // 一级菜单-分配优化管理
+}
+.ilng-iscm-costProfitManage:before {
+  content: '\e70f'; // 一级菜单-成本利润管理
+}
+.ilng-iscm-contractManage:before {
+  content: '\e710'; // 一级菜单-合同管理
+}
+.ilng-iscm-measurementSettlementManage:before {
+  content: '\e711'; // 一级菜单-计量结算管理
+}
+.ilng-iscm-equipmentFacilitiesManage:before {
+  content: '\e70c'; // 一级菜单-设备设施管理
+}
+.ilng-iscm-stockManage:before {
+  content: '\e714'; // 一级菜单-库存管理
+}
+.ilng-iscm-transportationManage:before {
+  content: '\e713'; // 一级菜单-运输管理
+}
+.ilng-iscm-notice:before {
+  content: '\e712'; // 一级菜单-公告
+}
+.ilng-iscm-home:before {
+  content: '\e718'; // 二级菜单-主页面
+}
+.ilng-iscm-demandForecast:before {
+  content: '\e6e1'; // 二级菜单-需求预测
+}
+.ilng-iscm-sale:before {
+  content: '\e6dc'; // 二级菜单-外网销售
+}
+.ilng-iscm-bigUser:before {
+  content: '\e6d8'; // 二级菜单-大用户
+}
+.ilng-iscm-insideUser:before {
+  content: '\e6da'; // 二级菜单-内部用户
+}
+.ilng-iscm-plan:before {
+  content: '\e6de'; // 二级菜单-季度/月度计划
+}
+.ilng-iscm-deliverPlan:before {
+  content: '\e6e0'; // 二级菜单-交付计划
+}
+.ilng-iscm-dispatchPlan:before {
+  content: '\e6e2'; // 二级菜单-调度计划
+}
+.ilng-iscm-gatestationPlan:before {
+  content: '\e6df'; // 二级菜单-门站计划
+}
+.ilng-iscm-conditionPrediction:before {
+  content: '\e6d3'; // 二级菜单-工况预测
+}
+.ilng-iscm-costProfit:before {
+  content: '\e719'; // 二级菜单-成本利润
+}
+.ilng-iscm-orderManage:before {
+  content: '\e6d4'; // 二级菜单-订单管理
+}
+.ilng-iscm-calculation:before {
+  content: '\e71a'; // 二级菜单-计量与计算
+}
+.ilng-iscm-equipmentSetting:before {
+  content: '\e6db'; // 二级菜单-设备能力设置
+}
+.ilng-iscm-linkScada:before {
+  content: '\e717'; // 二级菜单-连接SCADA
+}
+.ilng-iscm-stock:before {
+  content: '\e6d7'; // 二级菜单-管存
+}
+.ilng-iscm-lngStock:before {
+  content: '\e6d6'; // 二级菜单-LNG库容
+}
+.ilng-iscm-lngCar:before {
+  content: '\e716'; // 二级菜单-LNG槽车
+}
+.ilng-iscm-standard:before {
+  content: '\e6e3'; // 二级菜单-规范及政策
+}
+.ilng-iscm-dynamic:before {
+  content: '\e6d9'; // 二级菜单-市场动态
+}
+.ilng-iscm-file:before {
+  content: '\e6dd'; // 二级菜单-文件
+}
+// ------------------------------------ 供应链管理系统导航图标 end
+
+// ------------------------------------ 设备管理导航图标 start
+.ilng-iems-basicData:before {
+  content: '\e701'; // 一级菜单-基础数据
+}
+.ilng-iems-sparePartsSupplies:before {
+  content: '\e702'; // 一级菜单-备件耗材
+}
+.ilng-iems-purchase:before {
+  content: '\e703'; // 一级菜单-购置管理
+}
+.ilng-iems-disposition:before {
+  content: '\e704'; // 一级菜单-设备处置
+}
+.ilng-iems-equipment:before {
+  content: '\e705'; // 一级菜单-设备管理
+}
+.ilng-iems-inspection:before {
+  content: '\e707'; // 一级菜单-巡检管理
+}
+.ilng-iems-repair:before {
+  content: '\e709'; // 一级菜单-维修管理
+}
+.ilng-qihuazhan:before {
+  content: '\e6ff'; // 气化站
+}
+.ilng-yongqiyonghu:before {
+  content: '\e700'; // 用气用户
+}
+.ilng-shebeipandian:before {
+  content: '\e6bc'; // 设备盘点
+}
+.ilng-shebeitaizhang:before {
+  content: '\e6bd'; // 设备台账
+}
+.ilng-shebeiyanshou:before {
+  content: '\e6be'; // 设备验收
+}
+.ilng-diaobozhuanyi:before {
+  content: '\e6bf'; // 调拨转移
+}
+.ilng-shebeilingyong:before {
+  content: '\e6c0'; // 设备领用
+}
+.ilng-shebeibaoxiu:before {
+  content: '\e6c1'; // 设备保修
+}
+.ilng-shebeibianmai:before {
+  content: '\e6c2'; // 设备变卖
+}
+.ilng-baoxiugongdan:before {
+  content: '\e6c3'; // 报修工单
+}
+.ilng-cangkupandian:before {
+  content: '\e6c4'; // 仓库盘点
+}
+.ilng-haocaiguanli:before {
+  content: '\e6c5'; // 耗材管理
+}
+.ilng-kucunpandian:before {
+  content: '\e6c6'; // 库存盘点
+}
+.ilng-lingliaoshenqing:before {
+  content: '\e6c7'; // 领料申请
+}
+.ilng-xunjianbiaozhun:before {
+  content: '\e6c8'; // 巡检标准
+}
+.ilng-shebeitaizhang:before {
+  content: '\e6c9'; // 设备台账
+}
+.ilng-rukuguanli:before {
+  content: '\e6ca'; // 入库管理
+}
+.ilng-chukuguanli:before {
+  content: '\e6cb'; // 出库管理
+}
+.ilng-diaobozhuanyi:before {
+  content: '\e6cd'; // 调拨转移
+}
+.ilng-xunjianrenwu:before {
+  content: '\e6d0'; // 巡检任务
+}
+.ilng-lingyongguihuan:before {
+  content: '\e6cc'; // 领用归还
+}
+.ilng-kucunyujing:before {
+  content: '\e6ce'; // 库存预警
+}
+.ilng-pingpai:before {
+  content: '\e6ac'; // 品牌
+}
+.ilng-shebeileibie:before {
+  content: '\e6ad'; // 设备类别
+}
+.ilng-jiliangdanwei:before {
+  content: '\e6ae'; // 计量单位
+}
+.ilng-caigoujihua:before {
+  content: '\e6af'; // 采购计划
+}
+.ilng-cangku:before {
+  content: '\e6b0'; // 仓库
+}
+.ilng-cunfangweizhi:before {
+  content: '\e6b1'; // 存放位置
+}
+.ilng-gongyingshang:before {
+  content: '\e6b2'; // 供应商
+}
+.ilng-caigoushenqing:before {
+  content: '\e6b3'; // 采购申请
+}
+.ilng-baoxiugongdan:before {
+  content: '\e6c3'; // 保修工单
+}
+.ilng-waiweiweixiu:before {
+  content: '\e6f3'; // 外委维修
+}
+// ------------------------------------- 设备管理导航图标 end
+
+// ------------------------------------- 图标旋转样式 start
+.antui-icon.spin:before {
+  display: inline-block;
+  animation: loadingCircle 1s infinite linear;
+}
+@keyframes loadingCircle {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg);
+  }
+}
+// ------------------------------------- 图标旋转样式 end

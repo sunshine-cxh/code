@@ -1,0 +1,23 @@
+@import '../../../assets/styles/flex.less';
+.antui-input,
+.ant-input {
+  border-radius: 4px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 !important;
+
+  &.antui-textarea {
+    line-height: 30px;
+
+    .ant-input-textarea-clear-icon {
+      width: 18px;
+      height: 18px;
+      margin: 13px 8px 0 0;
+    }
+  }
+
+  //改写滚动条样式
+  ::-webkit-scrollbar-track {
+    margin-top: 6px;
+  }
+}

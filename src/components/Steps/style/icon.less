@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.inner {
+  width: 18px;
+  height: 18px;
+  border-radius: inherit;
+}
+
+.step-icon-finsh__wrapper {
+  .wrapper();
+  background: rgba(37, 153, 215, .3);
+  .step-icon-finsh-inner {
+    .inner();
+    background: rgba(37, 153, 215, 1);
+  }
+}
+
+.step-icon-wait__wrapper {
+  .wrapper();
+  background: #fff;
+  .step-icon-wait {
+    .inner();
+    background:rgba(191, 191, 191, 1);
+  }
+}

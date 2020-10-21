@@ -1,0 +1,157 @@
+@import '~antd/lib/style/themes/default.less';
+
+@form-prefix-cls: antui-form;
+@border-radius-fixed: 4px;
+
+.@{form-prefix-cls} {
+  &.form-inline {
+    .row-item {
+      .col-item {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+    }
+    .form-btns {
+      display: flex;
+      justify-content: space-around;
+      line-height: 39px;
+      height: 39px;
+      vertical-align: top;
+      button:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &.form-grid {
+    &.preview {
+      .ant-form-item {
+        margin-bottom: 12px;
+      }
+      .ant-form-item-control {
+        min-height: 40px;
+        border-bottom: 1px dashed #aaa;
+      }
+    }
+    .ant-col {
+      padding: 0 !important;
+    }
+
+    .ant-form-item {
+      display: flex;
+      flex: 1;
+      justify-content: space-between !important;
+
+      .ant-input,
+      .ant-input-number,
+      .ant-select,
+      .ant-select-selection,
+      .ant-select-selection__rendered {
+        height: 40px;
+        line-height: 40px;
+        border-radius: @border-radius-fixed;
+        &.ant-calendar-picker-input {
+          padding: 0 11px !important;
+        }
+      }
+
+      .ant-form-item-label {
+        text-align: right;
+        // margin-right: 15px;
+        max-width: 100px;
+      }
+    }
+    .ant-col {
+      padding: 0;
+    }
+    .row-item {
+      .col-item {
+        padding: 0;
+        .ant-calendar-picker {
+          width: 100% !important;
+        }
+        .ant-input-number {
+          width: 100% !important;
+        }
+        .ant-time-picker {
+          width: 100% !important;
+        }
+      }
+    }
+    .col-item-password-wrap {
+      > .col-item {
+        padding: 0 4px;
+      }
+    }
+    .form-btns {
+      button {
+        width: 140px;
+        height: 42px;
+        border: none;
+        border-radius: 4px;
+        &.button-confirm {
+          background-color: #2785E4;
+        }
+        &.button-reset {
+          background-color: #2785E4;
+          opacity:0.5;  
+        }
+      }
+      &.select-style {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .transfer-tree-value-list {
+    display: block;
+    margin-top: 4px;
+    border: 1px solid #eee;
+    padding: 0px 10px;
+    border-radius: 4px;
+  }
+
+  .auto-complete-loading {
+    cursor: text;
+  }
+
+  .ant-divider-horizontal.ant-divider-with-text,
+  .ant-divider-horizontal.ant-divider-with-text-left,
+  .ant-divider-horizontal.ant-divider-with-text-right {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .ant-form-item-label > label::after{
+    content:'';
+  }
+}
+
+// .ant-modal.antui-transfer-modal {
+//   .ant-modal-body {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
+
+// .ant-modal.antui-table-modal {
+//   .ant-modal-body {
+//     padding: 0;
+//     max-height: 418px;
+//     overflow: auto;
+//     .ant-table-small {
+//       border: none;
+//       border-radius: 0px;
+//     }
+//   }
+//   .ant-modal-footer {
+//     display: flex;
+//     align-items: center;
+//     .left {
+//       flex: auto;
+//       text-align: left;
+//     }
+//   }
+// }

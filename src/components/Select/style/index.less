@@ -1,0 +1,30 @@
+.antui-select {
+  .ant-select-selection {
+    height: 40px;
+    border-radius: 4px;
+  }
+  .ant-select-selection__rendered {
+    line-height: 40px;
+    & > ul > li {
+      margin-top: 6px;
+    }
+  }
+}
+
+// 配置多选审批人样式
+.antui-select-flow {
+  .ant-select-selection__choice:not(:nth-last-child(2)) {
+    margin-right: 20px;
+    position: relative;
+    overflow: visible;
+    &::after {
+      content: '>';
+      position: absolute;
+      right: -15px;
+      top: 0;
+    }
+  }
+  .ant-select-selection--multiple .ant-select-selection__clear {
+    top: 50%;
+  }
+}

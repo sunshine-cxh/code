@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>阀门</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <!--external css-->
+    <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
+
+	<!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+
+  </head>
+
+  <body>
+  	<style type="text/css">
+  		.btn{
+				background-color: #203864!important;
+   				border-color: #203864!important;
+			}
+  	</style>
+
+    <!--main content start-->
+          <section class="wrapper site-min-height">
+              <!-- page start-->
+              <section class="panel">
+                  <header class="panel-heading">
+                      阀门列表
+                     
+                  </header>
+                  <!--<div class="panel-body">
+                      <div class="row">
+
+                          <div class="col-md-12">
+                              <div class="input-group"><input type="text" placeholder="请输入查询条件" class="input-sm form-control"> <span class="input-group-btn">
+                              <button type="button" class="btn btn-sm btn-success">查询</button> </span></div>
+                          </div>
+                      </div>
+                  </div>-->
+                  <table class="table table-hover p-table">
+                      <thead>
+                      <tr>
+                          <th>序号</th>
+                          <th>设备编号</th>
+                          <th>品牌</th>
+                          <th>型号</th>
+                          <th>安装地址</th>
+                          <th>启用日期</th>
+                          <th>运行状态</th>
+                          <th>维护人</th>
+                          <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+	                      <tr>
+	                          <td class="p-name">
+	                              <a href="#">1</a>
+	                          </td>
+	                          <td class="p-team">
+	                              <a href="#">RD486454</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">飞奥</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#"> </a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">地址？</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">2013/8/7</a>
+	                          </td>
+	                          <td>
+	                              <span class="label label-danger">故障</span>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">张迎旭</a>
+	                          </td>
+	                          <td>
+	                              <a data-toggle="modal" href="#myModal" class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o"></i> 处理 </a>
+	                          </td>
+	                      </tr>
+	                      <tr>
+	                          <td class="p-name">
+	                              <a href="#">2</a>
+	                          </td>
+	                          <td class="p-team">
+	                              <a href="#">RD486454</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">春晖</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#"> </a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">地址？</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">2013/8/7</a>
+	                          </td>
+	                          <td>
+	                              <span class="label label-success">正常</span>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">张迎旭</a>
+	                          </td>
+	                          <td>
+	                              <a data-toggle="modal" href="#myModal" class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o"></i> 处理 </a>
+	                          </td>
+	                      </tr>
+	                      <tr>
+	                          <td class="p-name">
+	                              <a href="#">3</a>
+	                          </td>
+	                          <td class="p-team">
+	                              <a href="#">RD486454</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">飞奥</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#"> </a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">地址？</a>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">2013/8/7</a>
+	                          </td>
+	                          <td>
+	                              <span class="label label-default">关闭</span>
+	                          </td>
+	                          <td class="p-progress">
+	                              <a href="#">张迎旭</a>
+	                          </td>
+	                          <td>
+	                              <a data-toggle="modal" href="#myModal" class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o"></i> 处理 </a>
+	                          </td>
+	                      </tr>
+	                      
+                      </tbody>
+                  </table>
+              </section>
+              <!-- page end-->
+          </section>
+
+			<!--vertical center Modal start-->
+			<div class="modal fade top-modal-without-space " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" style="margin-top: 40px;">
+			      <div class="modal-content-wrap">
+			          <div class="modal-content">
+			              <div class="modal-body">
+			                <section class="panel">
+			                    <header class="panel-heading">
+			                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                        <h4 class="modal-title">阀门</h4>
+			                    </header>
+			                    <div class="panel-body">
+			                        <form role="form">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">运行状态</label>
+                                            <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="输入温度等级"> -->
+                                            <div id="business-category"></div>
+                                        </div>
+			                        </form>
+
+			                    </div>
+			                </section>
+			              </div>
+			              <div class="modal-footer">
+			                  <button data-dismiss="modal" class="ant-btn ant-btn-cancel" type="button">关闭</button>
+			                  <button data-dismiss="modal" class="ant-btn ant-btn-primary" type="button">提交</button>
+			              </div>
+			          </div>
+			      </div>
+			  </div>
+			</div>
+			<!-- vertical center Modal end -->
+      <!--main content end-->
+
+      <!--footer start-->
+      <!-- <footer class="site-footer" style="position:fixed; bottom:0;left: 0;right: 0;">
+          <div class="text-center">
+              2013 &copy; FlatLab by VectorLab.
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer> -->
+      <!--footer end-->
+  
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+		
+	<!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+    <script type="text/babel">
+			$(function() {
+				// 引入组件
+				const { Select } = antd;
+				
+				const businessCategory = $('#business-category')[0];
+
+				ReactDOM.render(
+					<Select defaultValue="0">
+						<Option value="0">开启</Option>
+						<Option value="1">关闭</Option>
+						<Option value="2">故障</Option>
+					</Select>,
+					businessCategory
+				)
+			})
+		</script>
+		<style>
+			.ant-select {
+				width: 80%!important;
+			}
+			@media (min-width: 768px) {
+				.modal-dialog {
+					width: 250px!important;
+				}
+			}
+			.panel {
+				margin-bottom: 0;
+			}
+			.ant-btn{
+				border-color: #203864;
+				margin-left: 10px;
+			}
+			
+		</style>
+
+  </body>
+</html>

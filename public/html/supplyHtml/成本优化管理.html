@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>成本优化管理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+	  <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+    <style>
+                .col-lg-6 ul.ant-pagination {
+                        width: auto;
+                        height: auto;   
+        }
+        .forecast {
+                        display: flex;
+                        padding-right: 20px;
+        }
+        .prediction {
+            flex: 1;
+        }
+        .condition {
+                        flex: 1;
+            margin-right: 10px;                     
+                }
+                .handle {
+                    display: flex;
+                }
+                .handle .ant-input-affix-wrapper {
+                    width: 56%;
+                }
+                .handle .ant-select {
+                    width: 100px;
+                }
+                .constraint {
+                    margin-top: 10px;
+                }
+                .submit {
+                    flex: 1;
+                    margin: 5px 0 0 5px;
+                }
+                #qlyctj, #ycyql {
+                    display: flex;
+                    justify-content: center;
+                }
+                .handle .ant-btn-primary {
+                    background-color: #203684!important;
+                    border-radius: 0;
+                }
+                .ant-table-wrapper a {
+                    color: #203684!important;
+                }
+                .ant-table-wrapper .ant-pagination-item-active {
+                    border-color: #203864;
+                }
+                .ant-card-head-title {
+                    color: #203684;
+                    font-weight: bold;
+                }
+                .forecast .ant-statistic-content {
+                    font-size: 35px;
+                }
+                .forecast .ant-statistic-content-value-decimal {
+                    font-size: 22px;
+                }
+               .form-group label {
+        text-align: right;
+        width: 22%;
+        margin-right: 20px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .form-control{
+        display: inline-block;
+        width: 50%;
+      }
+	  
+	   .btn-info{
+          background-color: #203864;
+          border-color: #203864;
+      }
+      .btn-info:hover{
+          background-color: #203864;
+          border-color: #203864;
+      }
+      .btn-info:active{
+          background-color: #203864;
+          border-color: #203864;
+      }
+      .btn-info:focus  {
+          background-color: #203864;
+          border-color: #203864;
+      }
+      .btn-primary{
+          background-color: #fff;
+          border-color: #203864;
+          color: #203864;
+      }
+      .btn-primary:hover{
+          background-color: #fff;
+          border-color: #203864;
+          color: #203864;
+      }
+      .btn-primary:active{
+          background-color: #fff;
+          border-color: #203864;
+          color: #203864;
+      }
+      .btn-primary:focus{
+          background-color: #fff;
+          border-color: #203864;
+          color: #203864;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+<!--main content start-->
+        <section class="wrapper site-min-height">
+            <!-- page start-->
+            <div id="morris">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                成本分析
+                            </header>
+                            <div class="panel-body">
+                              <div id="echart" style="width: 100%;height:350px;"></div>
+                              <!-- <div style="float: left;width: 50%;height: 100%">
+                                <div id="echart" style="width: 100%;height:350px;"></div>
+                              </div>
+                              <div style="float: left;width: 50%;height: 100%">
+                                <div id="echart2" style="width: 100%;height:350px;"></div>
+                              </div>   -->
+                            </div>
+							<div style="text-align:center">
+							    门站：<select id="check1" defaultValue="1" style="width:100px;height:30px;"> 
+						<option value="1">求雨岭门站</option> 
+						<option value="2">坪山门站</option> 
+						<option value="3">安托山门站</option> 
+						<option value="4">迭福门站</option>
+						<option value="5">华安储气库</option>
+					  </select> 
+					  &nbsp;&nbsp;&nbsp;&nbsp; 综合：<select id="check1" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">LNG</option> 
+						<option value="2">NG</option> 
+						<option value="3">总体</option> 
+					  </select> 
+					   &nbsp;&nbsp;&nbsp;&nbsp;大用户：<select id="check1"  style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">钰湖电厂</option> 
+						<option value="2">宝昌电厂</option> 
+						<option value="3">华电分布式</option> 
+						<option value="4">南天电厂</option> 
+					  </select> 
+					  &nbsp;&nbsp;&nbsp;&nbsp;调压站：<select id="check1" style="width:100px;height:30px;"> 
+						<option value="0">请选择</option> 
+						<option value="1">中心公园调压站</option>  
+						<option value="2">雪铁龙调压站 </option> 
+						<option value="3">西乡调压站 </option> 
+						<option value="4">松岗调压站 </option> 
+						<option value="5">深圳卷烟厂调压站 </option> 
+						<option value="6">沙井调压站 </option> 
+						<option value="7">赛格三星调压站 </option> 
+						<option value="8">南油调压站 </option> 
+						<option value="9">梅林调压站 </option> 
+						<option value="10">罗芳调压站 </option> 
+						<option value="11">龙翔调压站 </option> 
+						<option value="12">龙华二线调压站 </option> 
+						<option value="13">留仙洞调压站 </option> 
+						<option value="14">华星光电调压站 </option> 
+						<option value="15">红岭东（特区）调压站 </option> 
+						<option value="16">红岭东(龙岗)调压站 </option> 
+						<option value="17">横岗调压站 </option> 
+						<option value="18">公明调压站 </option> 
+						<option value="19">方正微电子调压站 </option> 
+						<option value="20">大工业区民用调压站 </option> 
+						<option value="21">滨海调压站 </option> 
+						<option value="22">宝安调压站 </option> 
+						<option value="23">安托山中压路 </option> 
+					  </select> 
+							</div>
+                        </section>                        
+                    </div>
+                     <div class="col-lg-12">
+                        <section class="panel">
+						  <header class="panel-heading">
+                                门站
+                            </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+							      <th>序号</th>
+                                  <th>名称</th>
+                                  <th>来源</th>
+                                  <th>单价(元/Nm³)</th>
+								  <th>热值(MJ/Nm³)</th>
+								  <th>购气量(万Nm³)</th>
+								  <th>总金额(元)</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+							      <td>1</td>
+                                  <td>求雨岭门站</td>
+                                  <td>西二线</td>
+								  <td>2.76</td>
+                                  <td>39</td>
+								  <td> <input class="form-control input-detail" type="text" autocomplete="off" max="10000000" min="0" step="1" value="38"></td>
+								  <td>1048800</td>
+                              </tr>                            
+                              <tr>
+							     <td>2</td>
+                                  <td>坪山门站</td>
+                                  <td>大鹏</td>
+								  <td>2.50</td>
+                                  <td>39</td>
+								  <td> <input class="form-control input-detail" autocomplete="off" max="10000000" min="0" step="1" value="3.3"></td>
+								  <td>82500</td>
+                              </tr>
+                              <tr>
+							      <td>3</td>
+                                  <td>安托山门站</td>
+                                  <td>大鹏</td>
+								  <td>2.58</td>
+                                  <td>39</td>
+								  <td> <input class="form-control input-detail" autocomplete="off" max="10000000" min="0" step="1" value="4.8"></td>
+								  <td>123840</td>				  
+                              </tr>
+							  <tr>
+							      <td>4</td>
+                                  <td>迭福门站</td>
+                                  <td>中石油</td>
+								  <td>2.60</td>
+                                  <td>39</td>
+								  <td> <input class="form-control input-detail" autocomplete="off" max="10000000" min="0" step="1" value="39"></td>
+								  <td>1014000</td>		  
+                              </tr>
+							  <tr>
+							     <td>5</td>
+                                  <td>华安储气库</td>
+                                  <td>华安</td>
+								  <td>1.63</td>
+                                  <td>39</td>
+								  <td> <input class="form-control input-detail" autocomplete="off" max="10000000" min="0" step="1" value="12"></td>
+								  <td>195600</td>
+                              </tr>                                  						  
+                              </tbody>							  
+                          </table>				  
+                         	
+						</section>
+					 </div>
+					 <div class="col-lg-12">
+					  <section class="panel">
+                  <header class="panel-heading">
+                      重点用户管理
+                  </header>
+                  <table class="table table-striped table-advance table-hover">
+                      <thead>
+                      <tr>
+                          <th><i class="fa fa-bullhorn"></i> 用户名称</th>
+                          <th class="hidden-phone"><i class="fa fa-question-circle"></i> 用户类型</th>
+                          <th><i class=" fa fa-edit"></i> 交付压力</th>
+                          <th><i class=" fa fa-edit"></i> 交付热值</th>
+                          <th><i class=" fa fa-edit"></i> 配气成本</th>
+                          <th>操作</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td><a href="#">钰湖电厂</a></td>
+                          <td class="hidden-phone">电厂用户</td>
+                          <td>2.5MPa</td>
+                          <td>38GJ/m³</td>
+                          <td>2.8元/m³</td>
+                          <td>
+                              <a data-toggle="modal" href="#myModal"><button class="btn btn-info btn-xs"><i class="fa fa-search"></i></button></a>
+                              <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-trash-o "></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">宝昌电厂</a></td>
+                          <td class="hidden-phone">电厂用户</td>
+                          <td>3.2MPa</td>
+                          <td>35GJ/m³</td>
+                          <td>2.5元/m³</td>
+                          <td>
+                              <a data-toggle="modal" href="#myModal"><button class="btn btn-info btn-xs"><i class="fa fa-search"></i></button></a>
+                              <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-trash-o "></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">华电分布式</a></td>
+                          <td class="hidden-phone">电厂用户</td>
+                          <td>3.5MPa</td>
+                          <td>37GJ/m³</td>
+                          <td>2.5元/m³</td>
+                          <td>
+                              <a data-toggle="modal" href="#myModal"><button class="btn btn-info btn-xs"><i class="fa fa-search"></i></button></a>
+                              <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-trash-o "></i></button>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">南天电厂</a></td>
+                          <td class="hidden-phone">电厂用户</td>
+                          <td>3.5MPa</td>
+                          <td>38GJ/m³</td>
+                          <td>2.7元/m³</td>
+                          <td>
+                              <a data-toggle="modal" href="#myModal"><button class="btn btn-info btn-xs"><i class="fa fa-search"></i></button></a>
+                              <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                              <button class="btn btn-default btn-xs"><i class="fa fa-trash-o "></i></button>
+                          </td>
+                      </tr>                      
+                      </tbody>
+                  </table>
+              </section>
+			  </div>
+			  
+                </div>
+            </div>
+
+ <!-- Modal -->
+        <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="margin-top: 20%;">
+                    <header class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">钰湖电厂</h4>
+                    </header>
+                    <div class="modal-body">
+                        
+                      <div class="row">
+                          <div class="col-sm-6" style="width: 100%;">
+                              <section class="panel">
+                                 <!-- <header class="panel-heading no-border">
+                                      用户一具体信息
+                                  </header> -->
+                                 <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>气源</th>
+                                        <th>占比</th>
+                                        <th>单价</th>
+                                        <th>单位配气成本</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>求雨岭门站</td>
+                                        <td>22%</td>
+                                        <td>2.76元/Nm³</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>坪山门站</td>
+                                        <td>17%</td>
+                                        <td>2.50元/Nm³</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>安托山门站</td>
+                                        <td>33%</td>
+                                        <td>2.58元/Nm³</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>迭福门站</td>
+                                        <td>28%</td>
+                                        <td>2.60元/Nm³</td>
+                                        <td>#</td>
+                                    </tr>
+									<tr>
+									    <td>5</td>
+                                        <td>华安储气库</td>
+                                        <td>28%</td>
+                                        <td>1.63元/Nm³</td>
+                                        <td>#</td>
+									</tr>
+                                    </tbody>
+                                </table>
+                              </section>
+                          </div>
+                      </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="ant-btn ant-btn-primary" type="button">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+		
+            <!-- page end-->
+        </section>
+    <!--main content end-->
+
+    <!--footer start-->
+   <!--  <footer class="site-footer">
+        <div class="text-center">
+            2013 &copy; FlatLab by VectorLab.
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <div id="root"></div> -->
+    <!--footer end-->
+    <!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- ���������в�����ʹ�� -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+
+    <script src="js/e-chart.js"></script>
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+	 <!-- script for this page only-->
+    <script src="js/cost-script.js"></script>
+  </body>
+</html>

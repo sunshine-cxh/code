@@ -1,0 +1,65 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../../assets/styles/variables.less';
+@import '../../../assets/styles/flex.less';
+
+@color-tab-selected: #0052cc;
+
+.navtab {
+  .flex-1();
+  min-width: 0;
+  padding: 0 30px;
+
+  .ant-menu-horizontal {
+    height: 53px;
+    line-height: 53px;
+    border: none;
+    .ant-menu-item {
+      margin-top: 0;
+      i {
+        font-size: 12px;
+        margin-left: 8px;
+        margin-top: -2px;
+      }
+      &:hover {
+        color: @color-tab-selected;
+        border-bottom: 2px solid @color-tab-selected;
+      }
+      &.ant-menu-item-selected {
+        color: @color-tab-selected;
+        border-bottom: 2px solid @color-tab-selected;
+      }
+    }
+    .ant-menu-submenu {
+      &.ant-menu-submenu-selected,
+      &.ant-menu-submenu-open {
+        color: @color-tab-selected;
+        border-bottom: 2px solid @color-tab-selected;
+        span {
+          color: @color-tab-selected;
+        }
+      }
+      &:hover {
+        color: @color-tab-selected;
+        border-bottom: 2px solid @color-tab-selected;
+      }
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  .ant-menu-item {
+    margin-top: -1px;
+    i {
+      font-size: 12px;
+      margin-left: 8px;
+      margin-top: -2px;
+    }
+    &:hover {
+      color: @color-tab-selected;
+    }
+    &.ant-menu-item-selected {
+      color: @color-tab-selected;
+      background-color: #fff;
+    }
+  }
+}

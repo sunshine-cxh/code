@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>负荷预测</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <script type="text/babel">
+        $(function() {    
+            // 引入组件
+            const { Card, Table, InputNumber, Select, Button, Statistic, Icon, Input } = antd;
+            // 大用户申报
+            const dyhsb = $('#dyhsb')[0];
+            const qlyctj = $('#qlyctj')[0];
+            const ycyql = $('#ycyql')[0];
+            const forecast = $('#forecast')[0];
+
+            // 所需数据
+            const columns = [
+                {
+                    title: '序号',
+                    dataIndex: 'id',
+                    key: 'id',
+                    width: 100,
+                },
+                {
+                    title: '用户名',
+                    dataIndex: 'name',
+                    key: 'name',
+                    render: text => <a>{text}</a>,
+                    width: 200,
+                },
+                {
+                    title: '昨日用气量',
+                    dataIndex: 'address',
+                    key: 'address',
+                    width: 150,
+                },
+                {
+                    title: '明日申报量',
+                    key: 'tags',
+                    dataIndex: 'tags',
+                    render: (text) => (
+                        <InputNumber min={0} defaultValue={text} />
+                    ),
+                },
+           
+            ];
+            const data = [
+                {
+                    key: '1',
+                    name: '西航铝业',
+                    id: 1,
+                    address: 88649,
+                    tags: 89000,
+                },
+                {
+                    key: '2',
+                    name: '西户天然气',
+                    id: 2,
+                    address: 61658,
+                    tags: 62000,
+                },
+                {
+                    key: '3',
+                    name: '热电厂',
+                    id: 3,
+                    address: 812813,
+                    tags: 815000,
+                },
+                {
+                    key: '4',
+                    name: '融鑫路热源厂',
+                    id: 4,
+                    address: 318908,
+                    tags: 319000,
+                },
+                {
+                    key: '5',
+                    name: '圣元热力',
+                    id: 5,
+                    address: 113466,
+                    tags: 116000,
+                },
+                {
+                    key: '6',
+                    name: '雁东供热',
+                    id: 6,
+                    address: 1534711,
+                    tags: 1540000,
+                },
+                {
+                    key: '7',
+                    name: '热力总公司',
+                    id: 7,
+                    address: 342206,
+                    tags: 3450000,
+                },
+                {
+                    key: '8',
+                    name: '朱雀热力',
+                    id: 8,
+                    address: 441819,
+                    tags: 460000,
+                },
+                {
+                    key: '9',
+                    name: '沣东热力',
+                    id: 9,
+                    address: 197566,
+                    tags: 200000,
+                },
+            ];
+            const paginationProps = {
+                showSizeChanger: true,
+                showQuickJumper: true,
+                showTotal: () => `共9条`,
+                size: 'small',
+                current: 1,
+                total: 50,
+                        };
+                        ReactDOM.render(
+                <Table columns={columns} dataSource={data} pagination={paginationProps} size="middle" />,
+                dyhsb,
+                        )
+
+            ReactDOM.render(
+                            <div class='forecast'>
+                                    <div className="condition">
+                                            <Card title="气量预测条件">
+                                                    <div className="handle">
+                                                            <div>
+                                                                    <div>明日温度：
+                                                                                    <Input placeholder="输入温度" suffix="℃" id="temperatureValue" />
+                                                                    </div>
+                                                                    <div className="constraint">
+                                                                            供气策略：
+                                                                            <Select defaultValue="0">
+                                                                                    <Option value="0">正常运营</Option>
+                                                                                    <Option value="1">节假日</Option>
+                                                                                    <Option value="2">气量短缺</Option>
+                                                                                    <Option value="3">供暖日开始</Option>
+                                                                                    <Option value="4">供暖日结束</Option>
+                                                                            </Select>
+                                                                    </div>
+                                                            </div>
+                                                            <div className="submit" >
+                                                                    <Button type="primary" id="calculation">计算</Button>
+                                                            </div>
+                                                    </div>
+                                            </Card>
+                                    </div>
+                                    <div className="prediction">
+                                            <Card title="预测用气量">
+                                                    <Statistic
+                                                            title="明日用气量"
+                                                            value={num}
+                                                            precision={0}
+                                                            valueStyle={{ color: '#3f8600' }}
+                                                            
+                                                            suffix="万Nm³"
+                                                    />
+                                            </Card>
+                                    </div>
+                            </div>,
+                            forecast
+            )
+            var inputValue = 'sdds';
+            var num = 0;
+            $('#calculation').click(function() {
+                var value = $('#temperatureValue').val();
+                console.log(value)
+                if (!value) {
+                    alert('温度不能为空！');
+                } else {
+                    $('.ant-statistic-content-value-int').eq(0).text(1628)
+                }
+            })
+        })
+    </script>
+
+
+    <style>
+                .col-lg-6 ul.ant-pagination {
+                        width: auto;
+                        height: auto;   
+        }
+        .forecast {
+                        display: flex;
+                        padding-right: 20px;
+        }
+        .prediction {
+            flex: 1;
+        }
+        .condition {
+                        flex: 1;
+            margin-right: 10px;                     
+                }
+                .handle {
+                    display: flex;
+                }
+                .handle .ant-input-affix-wrapper {
+                    width: 56%;
+                }
+                .handle .ant-select {
+                    width: 100px;
+                }
+                .constraint {
+                    margin-top: 10px;
+                }
+                .submit {
+                    flex: 1;
+                    margin: 5px 0 0 5px;
+                }
+                #qlyctj, #ycyql {
+                    display: flex;
+                    justify-content: center;
+                }
+                .handle .ant-btn-primary {
+                    background-color: #203684!important;
+                    border-radius: 0;
+                }
+                .ant-table-wrapper a {
+                    color: #203684!important;
+                }
+                .ant-table-wrapper .ant-pagination-item-active {
+                    border-color: #203864;
+                }
+                .ant-card-head-title {
+                    color: #203684;
+                    font-weight: bold;
+                }
+                .forecast .ant-statistic-content {
+                    font-size: 35px;
+                }
+                .forecast .ant-statistic-content-value-decimal {
+                    font-size: 22px;
+                }
+              
+    </style>
+
+  </head>
+
+  <body>
+
+<!--main content start-->
+        <section class="wrapper site-min-height">
+            <!-- page start-->
+            <div id="morris">
+                <div class="row">
+                    <div class="col-lg-6" style="width: 55%;">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                日用气量趋势图
+                            </header>
+                            <div class="panel-body">
+                                <!-- <div id="hero-graph" class="graph"></div> -->
+                                <div id="echart1" style="width: 100%;height:300px;"></div>
+                            </div>
+                        </section>
+                        <section class="panel">
+                            <header class="panel-heading">
+                                月用气量趋势图
+                            </header>
+                            <div class="panel-body">
+                                <!-- <div id="hero-graph" class="graph"></div> -->
+                                <div id="echart2" style="width: 100%;height:300px;"></div>
+                            </div>
+                        </section>
+                        <section class="panel">
+                            <header class="panel-heading">
+                                年用气量趋势图
+                            </header>
+                            <div class="panel-body">
+                                <!-- <div id="hero-graph" class="graph"></div> -->
+                                <div id="echart3" style="width: 100%;height:300px;"></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-6" style="width: 45%;">
+                        <section class="panel">
+                          
+                            <header class="panel-heading">
+                                大用户申报
+                            </header>
+                            <div class="panel-body" id="dyhsb">
+                                
+                            </div>
+                        </section>
+                        <section class="panel">
+                          
+                            <div id="forecast"></div>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- page end-->
+        </section>
+    <!--main content end-->
+
+    <!--footer start-->
+   <!--  <footer class="site-footer">
+        <div class="text-center">
+            2013 &copy; FlatLab by VectorLab.
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <div id="root"></div> -->
+    <!--footer end-->
+    <!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+
+    <script src="js/e-chart.js"></script>
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!-- script for this page only-->
+    <script src="js/morris-script1.js"></script>
+  </body>
+</html>

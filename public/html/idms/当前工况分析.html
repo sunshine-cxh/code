@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>压力流量分析</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+  </head>
+
+  <body>
+		<section class="wrapper">
+              <!-- page start-->
+
+              <div class="flot-chart">
+                  <!-- page start-->
+                  <div class="row">
+                      <div class="col-lg-6" style="width: 50%;">
+                          <section class="panel">
+                              <header class="panel-heading">
+                                  瞬态分析
+                              </header>
+                              <div class="panel-body">
+                                  <div id="echart1" style="width: 100%;height:400px;"></div>
+                                  <div id="business-category"></div>
+                              </div>
+                          </section>
+
+                      </div>
+
+                      <div class="col-sm-6" style="width: 50%;">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              稳态分析
+                          </header>
+                          <!-- <div id="allmap" style="height:440px;width: 100%;"></div> -->
+                          <!-- 图片放大缩小 -->
+                          <div id="pageContent">
+                              <div id="imgContainer">
+                                <div class="zoomableContainer">
+                                  <img id="imageFullScreen" src="./img/png1.png" style="height: 440px;">
+                                </div>
+                              </div>
+                            </div>
+                          <!-- 图片放大缩小end -->
+                      </section>
+                  </div>
+                  </div>
+                  <!-- page end-->
+              </div>
+              <div class="row">
+                 
+                  <div class="col-sm-6" style="width: 50%;">
+                      <section class="panel">
+                          <header class="panel-heading">
+                             管网信息
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>管网最低压力点</th>
+                                  <th>管网最低压力值</th>
+                                  <th>管网最低允许压力</th>
+                                  <th>管网最高允许压力</th>
+                                  <th>管存量</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>迎春小区</td>
+                                  <td>72.61kPa</td>
+                                  <td>50kPa</td>
+                                  <td>3.8MPa</td>
+                                  <td>69万m³</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+                  <div class="col-sm-6" style="width: 50%;">
+                      <section class="panel">
+                          <header class="panel-heading">
+                             管网承载率
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>现状管网负荷</th>
+                                  <th>现状管网极限负荷</th>
+                                  <th>管网承载率</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1658万m³</td>
+                                  <td>1850万m³</td>
+                                  <td>89.62%</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              流速最大的设备
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>#</th>
+                                  <th>设备名称</th>
+                                  <th>上游节点</th>
+                                  <th>下游节点</th>
+                                  <th>上游流速</th>
+                                  <th>下游流速</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>管道443012</td>
+                                  <td>D12579</td>
+                                  <td>D12580</td>
+                                  <td>29.7m³/h</td>
+                                  <td>29.7m³/h</td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>管道443012</td>
+                                  <td>D12579</td>
+                                  <td>D12580</td>
+                                  <td>28.4m³/h</td>
+                                  <td>28.3m³/h</td>
+                              </tr>
+                              <tr>
+                                  <td>3</td>
+                                  <td>管道402324</td>
+                                  <td>D23423</td>
+                                  <td>D23424</td>
+                                  <td>28.1m³/h</td>
+                                  <td>28.1m³/h</td>
+                              </tr>
+                              <tr>
+                                  <td>4</td>
+                                  <td>管道423467</td>
+                                  <td>D76433</td>
+                                  <td>D76434</td>
+                                  <td>26.7m³/h</td>
+                                  <td>26.6m³/h</td>
+                              </tr>
+                              <tr>
+                                  <td>5</td>
+                                  <td>管道442342</td>
+                                  <td>D35672</td>
+                                  <td>D35673</td>
+                                  <td>26.6m³/h</td>
+                                  <td>26.6m³/h</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+                  <div class="col-sm-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              压损最大的设备
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>#</th>
+                                  <th>设备名称</th>
+                                  <th>上游节点</th>
+                                  <th>下游节点</th>
+                                  <th>压损</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>管道235462</td>
+                                  <td>T007003</td>
+                                  <td>T007002</td>
+                                  <td>45kPa/km</td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>管道634532</td>
+                                  <td>T546422</td>
+                                  <td>T546423</td>
+                                  <td>39kPa/km</td>
+                              </tr>
+                              <tr>
+                                  <td>3</td>
+                                  <td>管道232632</td>
+                                  <td>T025670</td>
+                                  <td>T025671</td>
+                                  <td>38kPa/km</td>
+                              </tr>
+                              <tr>
+                                  <td>4</td>
+                                  <td>管道236543</td>
+                                  <td>T623425</td>
+                                  <td>T623426</td>
+                                  <td>37kPa/km</td>
+                              </tr>
+                              <tr>
+                                  <td>5</td>
+                                  <td>管道325116</td>
+                                  <td>T845345</td>
+                                  <td>T845345</td>
+                                  <td>37kPa/km</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+         
+       <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <script src="assets/flot/jquery.flot.js"></script>
+    <script src="assets/flot/jquery.flot.resize.js"></script>
+    <script src="assets/flot/jquery.flot.pie.js"></script>
+    <script src="assets/flot/jquery.flot.stack.js"></script>
+    <script src="assets/flot/jquery.flot.crosshair.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!--script for this page only-->
+    <script src="js/flot-chart1.js"></script>
+
+    <script src="js/e-chart.js"></script>
+    <!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+
+    <script type="text/babel">
+      $(function() {
+        // 引入组件
+        const { Select,Button } = antd;
+        
+        const businessCategory = $('#business-category')[0];
+
+        ReactDOM.render(
+          <div class="div-select">
+          <Select defaultValue="0" >
+            <Option value="0">Nodes</Option>
+            <Option value="1">Regulators</Option>
+            <Option value="2">System</Option>
+            <Option value="3">Valves</Option>
+          </Select>
+          <Select defaultValue="0">
+            <Option value="0">华安调压器</Option>
+            <Option value="1">坪山7</Option>
+            <Option value="2">坪山调压器</Option>
+            <Option value="3">安托山调压器</Option>
+          </Select>
+          <Select defaultValue="0">
+            <Option value="0">C Value</Option>
+            <Option value="1">Flow</Option>
+            <Option value="2">From Node Pressure</Option>
+            <Option value="3">tau</Option>
+            <Option value="4">To Node Pressure</Option>
+          </Select>
+          <Button type="primary">添加</Button>
+          </div>,
+          businessCategory
+        )
+      })
+    </script>
+    <style>
+      .ant-select {
+        margin-left: 15px;
+        width: 150px;
+      }
+      .ant-btn {
+        margin-left: 10px;
+      }
+      .div-select{
+        padding-left: 50px;
+      }
+    </style>
+
+    <!-- 图片放大缩小 -->
+    <script src="./js/e-smart-zoom-jquery.min.js"></script>
+    <script>
+        $(function() {  
+            $('#imageFullScreen').smartZoom({'containerClass':'zoomableContainer'});        
+            $('#topPositionMap,#leftPositionMap,#rightPositionMap,#bottomPositionMap').bind("click", moveButtonClickHandler);
+            $('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+    
+            function zoomButtonClickHandler(e){
+                var scaleToAdd = 0.8;
+                if(e.target.id == 'zoomOutButton')
+                    scaleToAdd = -scaleToAdd;
+                $('#imageFullScreen').smartZoom('zoom', scaleToAdd);
+            }        
+    
+            function moveButtonClickHandler(e){
+                var pixelsToMoveOnX = 0;
+                var pixelsToMoveOnY = 0;           
+    
+                switch(e.target.id){
+                    case "leftPositionMap":
+                        pixelsToMoveOnX = 50;
+                    break;
+    
+                    case "rightPositionMap":
+                        pixelsToMoveOnX = -50;
+                    break;
+    
+                    case "topPositionMap":
+                        pixelsToMoveOnY = 50;
+                    break;
+    
+                    case "bottomPositionMap":
+                        pixelsToMoveOnY = -50;
+                    break;
+                }
+                $('#imageFullScreen').smartZoom('pan', pixelsToMoveOnX, pixelsToMoveOnY);
+            } 
+        });
+    </script>
+    <!-- 图片放大缩小end -->
+
+
+  </body>
+</html>

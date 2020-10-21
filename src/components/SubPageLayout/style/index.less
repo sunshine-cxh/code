@@ -1,0 +1,69 @@
+@import '../../../assets/styles/flex.less';
+
+.sub-page-layout {
+  // 公用块
+  .block-wrap {
+    .header {
+      .flexbox();
+      .flex-justify-content-space-between();
+      .flex-align-items-center();
+      height: 30px;
+      margin-bottom: 28px;
+      .title {
+        font-size: 20px;
+        color: #000;
+      }
+
+      .icon-item {
+        color: #000;
+        font-weight: bold;
+        margin: 0px 14px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // 表单
+  .form-wrap {
+    padding-right: 160px;
+    .ant-form {
+      .flexbox();
+      .flex-justify-content-space-between();
+      .flex-wrap-wrap();
+      .ant-form-item {
+        width: 45%;
+        .ant-form-item-label {
+          max-width: 150px;
+          text-align: right;
+          padding-right: 7px;
+        }
+      }
+      .ant-form-item-label > label::after{
+        content: '';
+      }
+    }
+
+    .item-inline-wrap {
+      .ant-form-item-children {
+        .flexbox();
+        .flex-align-items-center();
+        .flex-justify-content-space-between();
+      }
+    }
+  }
+
+  // 表格操作区域
+  .table-wrap {
+  }
+
+  // 底部按钮
+  .footer-wrap {
+    text-align: center;
+    height: 100px;
+    margin-bottom: 50px;
+    button {
+      margin:0 30px;
+    }
+  }
+}

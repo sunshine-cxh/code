@@ -1,0 +1,92 @@
+.outWarehouse-add {
+  // .content__wrapper {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
+  // 左侧--基本信息
+  .basic-infos__wrapper {
+    p {
+      font-size: 19px;
+      font-weight: bold;
+    }
+    .ant-form {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .ant-form-item {
+        width: 45%;
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+      
+    }
+    .ant-form-item-label {
+      text-align: left;
+    }
+    .procurement-cycle {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .pub-title {
+    .title {
+      margin-bottom: 19px;
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      .icon-item {
+        color: rgb(4, 57, 140);
+        font-weight: bold;
+        margin: 0px 14px;
+        cursor: pointer;
+        font-size: 19px;
+        margin-top: 9px;
+      }
+      span {
+        margin-right: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+  // 右侧--表格操作区域
+  .operation-area__wrapper {
+    flex: 4;
+    .apply-info {
+      .pub-title();
+    }
+    .link-file {
+      margin-top: 20px;
+      .pub-title();
+    }
+  }
+
+  .btn-footer-area {
+    text-align: center;
+    height: 100px;
+    button:first-child {
+      margin-right: 69px;
+    }
+    button:last-child {
+      margin-left: 69px;
+    }
+  }
+}
+
+.title-name{
+  font-size: 19px !important;
+  font-weight: bold !important;
+}
+.test{
+  
+  thead{
+    th:first-child{
+      .ant-table-column-title{
+        display: none;
+      }
+    }
+  }
+  
+}

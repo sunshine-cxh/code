@@ -1,0 +1,31 @@
+@import '../../../../../assets/styles/flex.less';
+
+.operate-user-page {
+  .seach-form {
+    .flexbox();
+    .flex-align-items-center();
+    margin-bottom: 36px;
+
+    // 重写 antd-input
+    .ant-input {
+      max-width: 228px;
+      font-size: 12px;
+    }
+    .form-item {
+      margin-right: 17px;
+      max-width: 228px;
+      .form-item-input {
+        max-width: 228px !important;
+
+        .ant-input {
+          width: 228px !important;
+        }
+      }
+    }
+  }
+
+  .footer {
+    text-align: end;
+    padding: 36px 0 24px;
+  }
+}

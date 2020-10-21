@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>交付计划</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+  </head>
+
+  <body>
+		<section class="wrapper">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              交付类别
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>序号</th>
+                                  <th>用户名称</th>
+                                  <th>交付总量</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>电厂用气</td>
+                                  <td>153900000（MJ）</td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>城市燃气</td>
+                                  <td>321（万Nm³）</td>
+                              </tr>
+                              
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+                  <div class="col-sm-6">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              交付明细
+                          </header>
+                          <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>序号</th>
+                                  <th>用户名称</th>
+                                  <th>交付压力（MPa）</th>
+                                  <th>热值波动</th>
+                                  <th>交付流量(万Nm³/h)</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td>钰湖电厂</td>
+                                  <td>3.2</td>
+                                  <td>2%~3%</td>
+                                  <td>14.8</td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>宝昌电厂</td>
+                                  <td>3.2</td>
+                                  <td>1.2%~2%</td>
+                                  <td>14.8</td>
+                              </tr>
+                              <tr>
+                                  <td>3</td>
+                                  <td>华电分布式</td>
+                                  <td>3.6</td>
+                                  <td>1.5%~2.2%</td>
+                                  <td>7.5</td>
+                              </tr>
+                              <tr>
+                                  <td>4</td>
+                                  <td>南天电厂</td>
+                                  <td>3.5</td>
+                                  <td>2%~3%</td>
+                                  <td>14.0</td>
+                              </tr>
+                              <tr>
+                                  <td>5</td>
+                                  <td>横岗调压站</td>
+                                  <td>3.2</td>
+                                  <td>2.5%~3%</td>
+                                  <td>3.6</td>
+                              </tr>
+                               <tr>
+                                  <td>6</td>
+                                  <td>宝安调压站 </td>
+                                  <td>3.5</td>
+                                  <td>2.7%~3.4%</td>
+                                  <td>4.5</td>
+                              </tr>
+                               <tr>
+                                  <td>7</td>
+                                  <td>龙华二线调压站 </td>
+                                  <td>3.2</td>
+                                  <td>2.7%~3.5%</td>
+                                  <td>4.2</td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </section>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+         
+       <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="js/respond.min.js" ></script>
+    <script src="assets/flot/jquery.flot.js"></script>
+    <script src="assets/flot/jquery.flot.resize.js"></script>
+    <script src="assets/flot/jquery.flot.pie.js"></script>
+    <script src="assets/flot/jquery.flot.stack.js"></script>
+    <script src="assets/flot/jquery.flot.crosshair.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+    <!--script for this page only-->
+    <script src="js/flot-chart1.js"></script>
+
+    <script src="js/e-chart.js"></script>
+    <!-- react -->
+    <script src="./assets/react/react.min.js"></script>
+    <script src="./assets/react/react-dom.min.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="./assets/react/babel.min.js"></script>
+    <script src="./assets/react/moment.js"></script>
+    <!-- antd -->
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+    <script src="./assets/react/antd.min.js"></script>
+
+    <script type="text/babel">
+      $(function() {
+        // 引入组件
+        const { Select,Button } = antd;
+        
+        const businessCategory = $('#business-category')[0];
+
+        ReactDOM.render(
+          <div class="div-select">
+          <Select defaultValue="0" >
+            <Option value="0">Nodes</Option>
+            <Option value="1">Regulators</Option>
+            <Option value="2">System</Option>
+            <Option value="3">Valves</Option>
+          </Select>
+          <Select defaultValue="0">
+            <Option value="0">华安调压器</Option>
+            <Option value="1">坪山7</Option>
+            <Option value="2">坪山调压器</Option>
+            <Option value="3">安托山调压器</Option>
+          </Select>
+          <Select defaultValue="0">
+            <Option value="0">C Value</Option>
+            <Option value="1">Flow</Option>
+            <Option value="2">From Node Pressure</Option>
+            <Option value="3">tau</Option>
+            <Option value="4">To Node Pressure</Option>
+          </Select>
+          <Button type="primary">添加</Button>
+          </div>,
+          businessCategory
+        )
+      })
+    </script>
+    <style>
+      .ant-select {
+        margin-left: 15px;
+        width: 150px;
+      }
+      .ant-btn {
+        margin-left: 10px;
+      }
+      .div-select{
+        padding-left: 50px;
+      }
+    </style>
+
+    <!-- 图片放大缩小 -->
+    <script src="./js/e-smart-zoom-jquery.min.js"></script>
+    <script>
+        $(function() {  
+            $('#imageFullScreen').smartZoom({'containerClass':'zoomableContainer'});        
+            $('#topPositionMap,#leftPositionMap,#rightPositionMap,#bottomPositionMap').bind("click", moveButtonClickHandler);
+            $('#zoomInButton,#zoomOutButton').bind("click", zoomButtonClickHandler);
+    
+            function zoomButtonClickHandler(e){
+                var scaleToAdd = 0.8;
+                if(e.target.id == 'zoomOutButton')
+                    scaleToAdd = -scaleToAdd;
+                $('#imageFullScreen').smartZoom('zoom', scaleToAdd);
+            }        
+    
+            function moveButtonClickHandler(e){
+                var pixelsToMoveOnX = 0;
+                var pixelsToMoveOnY = 0;           
+    
+                switch(e.target.id){
+                    case "leftPositionMap":
+                        pixelsToMoveOnX = 50;
+                    break;
+    
+                    case "rightPositionMap":
+                        pixelsToMoveOnX = -50;
+                    break;
+    
+                    case "topPositionMap":
+                        pixelsToMoveOnY = 50;
+                    break;
+    
+                    case "bottomPositionMap":
+                        pixelsToMoveOnY = -50;
+                    break;
+                }
+                $('#imageFullScreen').smartZoom('pan', pixelsToMoveOnX, pixelsToMoveOnY);
+            } 
+        });
+    </script>
+    <!-- 图片放大缩小end -->
+
+
+  </body>
+</html>

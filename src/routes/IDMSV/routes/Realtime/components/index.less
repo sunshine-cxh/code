@@ -1,0 +1,63 @@
+.idmsv-realtime {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.7vh;
+  height: 100%;
+  .video-js {
+    
+    .vjs-big-play-button{
+      width: 2em;
+      left: 50%!important;
+      top: 50%!important;
+      margin-left: -1em!important;
+      margin-top: -0.8em!important;
+    }
+  }
+  .fixed-video{
+    width: 100%;
+    height: calc(100% - 51px);
+  }
+  .layout-video{
+    width: 100%;
+    height: calc(100% - 200px);
+    margin: 100px 0;
+  }
+  .left, .right {
+    width: 24%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .video-title {
+      font-size:20px;
+      font-weight:bold;
+      color:rgba(82,255,255,1);
+      margin-bottom: 15px;
+    }
+  }
+  .realtime-map {
+    height: 100%;
+    position: relative;
+    padding: 2%;
+    .video-layout {
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      width: 96%;
+      height: 96%;
+      z-index: 99;
+      .icon-item {
+        font-size: 24px;
+        color: #cccddd;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    }
+    .map {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  
+}

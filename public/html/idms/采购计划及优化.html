@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>气源采购及优化</title>
+
+     <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/react/antd.min.css"/>
+   <style type="text/css">
+	  .alignment{text-align:right;}
+	  .tab td{text-align:center;}
+	  .tabcss thead tr {
+display:block;
+}
+.tabcss tbody {
+display: block;
+height: 135px;
+overflow: auto;
+}
+ .btnDefut,.btnSuccess{
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 2px;
+      color: #333;
+    }
+    .btnDefut:hover{
+      border: 1px solid #3399ff;
+      color: #3399ff;
+    }
+    .btnSuccess:hover{
+      border: 1px solid #3399ff;
+      color: #203864;
+    }
+    .btn-group label{
+      background: #fff;
+      color: #333;
+      border: none;
+      border-bottom:2px solid #ccc
+
+    }
+    .btn-group label:hover,
+    .btn-group label:active,
+    .btn-group label:visited,
+    .btn-group label:focus,
+    .btn-group label.active.focus {
+      color: #203864;
+      background: #fff!important;
+      outline: none!important;
+      border-color: transparent transparent #203864 transparent!important;
+    }
+    .btn-group label.active{
+      border-bottom:2px solid#203864;
+      background: #fff;   
+      color: #203864;
+    }
+				.table-hover>tbody>tr:hover{
+						background: #ddeeff;
+				}
+   </style>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+			<div id="root"></div>
+      
+  
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
+    <script src="js/respond.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.pulsate.min.js"></script>
+
+    <!--right slidebar-->
+    <script src="js/slidebars.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+    <!--script for this page only-->
+    <script src="js/gritter.js" type="text/javascript"></script>
+    <script src="js/pulstate.js" type="text/javascript"></script>
+	<script type="text/javascript">		
+       // tab切换
+
+	 $(".alignment").blur(function(){
+		 var ControlId = $(this).attr("id");
+		 var Order = ControlId.charAt(ControlId.length - 1);
+		 var First = ControlId.substring(0,1);
+		 var price = First+"price"+Order;
+		 var gas = First+"gas"+Order;
+		 var amount = First +"Amount"+Order;
+		 $("#"+amount).text((parseFloat($("#"+price).text()) || 0) * (parseFloat($("#"+gas).val()) || 0));
+		 
+		var sumGas=0;
+		var sumAmount =0;
+		var trList1 = $("#table1").children("tr");		
+        for (var i=0;i<trList1.length;i++) {
+        var tdArr = trList1.eq(i).find("td");
+    
+        sumGas += (parseFloat(tdArr.eq(5).find("input").val()) || 0);
+        sumAmount += (parseFloat(tdArr.eq(6).find("label").text()) || 0);
+       }
+	   
+        var trList2 = $("#table2").children("tr");		
+        for (var i=0;i<trList2.length;i++) {
+        var tdArr = trList2.eq(i).find("td");
+    
+        sumGas += (parseFloat(tdArr.eq(5).find("input").val()) || 0);
+        sumAmount += (parseFloat(tdArr.eq(6).find("label").text()) || 0);
+       }
+	   
+	   var trList3 = $("#table3").children("tr");		
+        for (var i=0;i<trList3.length;i++) {
+        var tdArr = trList3.eq(i).find("td");
+    
+        sumGas += (parseFloat(tdArr.eq(5).find("input").val()) || 0);
+        sumAmount += (parseFloat(tdArr.eq(6).find("label").text()) || 0);
+       }
+	   $("#TotalGas").val(sumGas);
+	   $("#TotalAmount").val(sumAmount);
+     });
+	
+	//重置
+	$("#btnReset").click(function(){
+	   var trList1 = $("#table1").children("tr");		
+        for (var i=0;i<trList1.length;i++) {
+        var tdArr = trList1.eq(i).find("td");
+    
+        tdArr.eq(5).find("input").val(0);
+        tdArr.eq(6).find("label").text(0);
+       }
+	   
+        var trList2 = $("#table2").children("tr");		
+        for (var i=0;i<trList2.length;i++) {
+        var tdArr = trList2.eq(i).find("td");
+    
+        tdArr.eq(5).find("input").val(0);
+        tdArr.eq(6).find("label").text(0);
+       }
+	   
+	   var trList3 = $("#table3").children("tr");		
+        for (var i=0;i<trList3.length;i++) {
+        var tdArr = trList3.eq(i).find("td");
+    
+        tdArr.eq(5).find("input").val(0);
+        tdArr.eq(6).find("label").text(0);
+       }
+	   $("#TotalGas").val(0);
+	   $("#TotalAmount").val(0);
+	});
+	
+	//模拟
+	$("#btnSimulation").click(function(){
+	   var trList = $("#TabUser").children("tr")
+    for (var i=0;i<trList.length;i++) {
+	    var heat = Math.floor(8*Math.random());			
+		var pressure = (Math.random()*(3-4)+4).toFixed(1);
+        var tdArr = trList.eq(i).find("td");
+        tdArr.eq(2).text(heat);
+        tdArr.eq(3).text(pressure);
+        if(heat > 5)
+		{
+		  tdArr.eq(2).css("background-color", "#FA6567");
+		}else 
+		{
+          tdArr.eq(2).css("background-color","white");
+		}
+		if(pressure >= 3.2 && pressure <= 3.8)
+		{
+		  tdArr.eq(3).css("background-color", "white");
+		}else 
+		{
+          tdArr.eq(3).css("background-color","#FA6567");
+		}
+    }
+	   
+           
+	});
+	</script>
+
+	<!-- react -->
+	<script src="./assets/react/react.min.js"></script>
+	<script src="./assets/react/react-dom.min.js"></script>
+	<!-- 生产环境中不建议使用 -->
+	<script src="./assets/react/babel.min.js"></script>
+	<script src="./assets/react/moment.js"></script>
+	<!-- antd -->
+	<link rel="stylesheet" href="./assets/react/antd.min.css"/>
+	<script src="./assets/react/antd.min.js"></script>
+
+	<script type="text/babel">
+		$(function() {
+			// 引入组件
+			const { Statistic, Card, InputNumber, Table, Tag, Button } = antd;
+      // 大用户申报
+			const root = $('#root')[0];
+
+			const contractColumns = [
+  {
+    title: '序号',
+    dataIndex: 'age',
+    key: 'age',
+  },
+  {
+    title: '大用户名称',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: '热值波动(0〜5％)',
+    dataIndex: 'address',
+    key: 'address',
+    render: tags => (
+      <div>
+        <Tag color={`${tags > 5 || tags < 0 ? '#FF5C5B' : ''}`}>{tags}</Tag>
+      </div>
+    )
+  },
+  {
+    title: '交付压力(3.2Mpa〜3.8Mpa)',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <div>
+        <Tag color={`${tags > 3.8 || tags < 3.2 ? '#FF5C5B' : ''}`}>{tags}</Tag>
+      </div>
+    ),
+  }
+];
+
+const contractData = [
+  {
+    key: '1',
+    name: '西航铝业',
+    age: 1,
+    address: 2,
+    tags: 3,
+  },
+  {
+    key: '2',
+    name: '西户天然气',
+    age: 2,
+    address: 7,
+    tags: 3.5,
+  },
+  {
+    key: '3',
+    name: '热电厂',
+    age: 3,
+    address: 4,
+    tags: 2.5,
+  },
+  {
+    key: '4',
+    name: '融鑫路热源厂',
+    age: 4,
+    address: 3,
+    tags: 3.2,
+  },
+  {
+    key: '5',
+    name: '圣元热力',
+    age: 5,
+    address: 3,
+    tags: 3.6,
+  }/*,
+  {
+    key: '6',
+    name: '雁东供热',
+    age: 6,
+    address:4,
+    tags: 3.5,
+  },
+  {
+    key: '7',
+    name: '热力总公司',
+    age: 7,
+    address: 3,
+    tags: 3.2,
+  },
+  {
+    key: '8',
+    name: '朱雀热力',
+    age: 8,
+    address: 3,
+    tags: 3.6,
+  },
+  {
+    key: '9',
+    name: '沣东热力',
+    age: 9,
+    address: 6,
+    tags: 3.5,
+  }*/
+];
+const stationColumns = [
+  {
+    title: '序号',
+    dataIndex: 'id',
+    key: 'id',
+    width: 20 ,
+  },
+  {
+    title: '名称',
+	   width: 85 ,
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: '来源',
+	 width: 100 ,
+    dataIndex: 'source',
+    key: 'source',
+  },
+  {
+    title: '单价(元/Nm³)',
+	width: 70,
+    dataIndex: 'single',
+    key: 'single',
+  },
+  {
+    title: '热值(MJ/Nm³)',
+	width: 45 ,
+    dataIndex: 'hot',
+    key: 'hot',
+  },
+  {
+    title: '购气量(Nm³)',
+	   width: 120 ,
+    key: 'buy',
+    dataIndex: 'buy',
+    render: value => (
+      <InputNumber min={0} max={10000000} defaultValue={value} />
+    ),
+  },
+  {
+    title: '总金额(万元)',
+	width: 120 ,
+    key: 'total',
+    dataIndex: 'total',
+  }
+];
+const gasColumns = [
+  {
+    title: '序号',
+    dataIndex: 'id',
+    key: 'id',
+    width: 20 ,
+  },
+  {
+    title: '名称',
+	width: '65px' ,
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: '来源',
+	width: '65px' ,
+    dataIndex: 'source',
+    key: 'source',
+  },
+  {
+    title: '单价(元/吨)',
+	width: '75px' ,
+    dataIndex: 'single',
+    key: 'single',
+  },
+  {
+    title: '热值(MJ/Nm³)',
+	width: '70px' ,
+    dataIndex: 'hot',
+    key: 'hot',
+  },
+  {
+    title: '购气量(吨)',
+	width: '120px' ,
+    key: 'buy',
+    dataIndex: 'buy',
+    render: value => (
+      <InputNumber min={0} max={100000} defaultValue={value} />
+    ),
+  },
+  {
+    title: '总金额(元)',
+	width: '100px' ,
+    key: 'total',
+    dataIndex: 'total',
+  }
+];
+const marketColumns = [
+  {
+    title: '序号',
+    dataIndex: 'id',
+    key: 'id',
+    width: 20 ,
+  },
+  {
+    title: '名称',
+	width: '90px' ,
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: '来源',
+	width: '70px' ,
+    dataIndex: 'source',
+    key: 'source',
+  },
+  {
+    title: '单价(元/Nm³)',
+	width: '60px' ,
+    dataIndex: 'single',
+    key: 'single',
+  },
+  {
+    title: '热值(MJ/Nm³)',
+	width: '78px' ,
+    dataIndex: 'hot',
+    key: 'hot',
+  },
+  {
+    title: '购气量(Nm³)',
+	width: '120px' ,
+    key: 'buy',
+    dataIndex: 'buy',
+    render: value => (
+      <InputNumber min={0} max={1000000} defaultValue={value} />
+    ),
+  },
+  {
+    title: '总金额(元)',
+	width: '100px' ,
+    key: 'total',
+    dataIndex: 'total',
+  }
+];
+const paginationProps = {
+      showQuickJumper: true,
+      showTotal: () => `共100条`,
+      current: 1,
+      total: 100,
+    };
+    const stationData = [{key:0,name:'高陵门站',id:1,source:'中石油',single:1.63,hot:39,buy:492129,total:802170.27},{key:1,name:'狄寨塬',id:2,source:'省天然气',single:1.71,hot:38,buy:7775020,total:13295284.2},
+	                     {key:2,name:'吕小寨',id:3,source:'省天然气',single:1.71,hot:38,buy:6378824,total:10907789.04}], 
+	gasData = [{key:0,name:'西北',id:1,source:'圆恒能源',single:3800,hot:38,buy:6800,total:25840000},{key:1,name:'西北',id:2,source:'绿源子洲',single:3850,hot:38,buy:9800,total:37730000},{key:2,name:'西北',id:3,source:'华气安塞',single:3780,hot:39,buy:7850,total:29673000},{key:3,name:'西北',id:4,source:'哈纳斯',single:3450,hot:38,buy:12850,total:44332500},{key:4,name:'华北',id:5,source:'枣庄薛能',single:3850,hot:39,buy:12550,total:48317500},{key:5,name:'华南',id:6,source:'广西北海管道燃气',single:3200,hot:38,buy:9850,total:31520000}], 
+	marketData = [{key:0,name:'上海天然气交易市场',id:1,source:'中石油',single:1.65,hot:38,buy:680500,total:1122825},{key:1,name:'重庆天然气交易市场',id:2,source:'中石化',single:1.64,hot:38,buy:581300,total:953332},{key:2,name:'西安天然气交易市场',id:3,source:'中海油',single:1.64,hot:38,buy:481700,total:789988}];
+   
+	
+ /*   for (let i = 0; i < 10; i++) {
+      gasData.push({
+        key: i,
+        name: '液化天然气' + (i + 1),
+        id: i + 1,
+        source: '液化天然气',
+        single: 1260,
+        hot: 5000,
+        buy: 1000,
+        total: 1260000
+      });
+    }
+    for (let i = 0; i < 10; i++) {
+      marketData.push({
+        key: i,
+        name: '天然气交易市场' + (i + 1),
+        id: i + 1,
+        source: '液化天然气',
+        single: 1260,
+        hot: 5000,
+        buy: 1000,
+        total: 1260000
+      });
+    }*/
+
+			ReactDOM.render(
+				<div className="source">
+				  <div class="panel-body">  
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-default active">
+							<a data-toggle="tab" href="#1">10月30日</a>
+						</label>
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#2">10月31日</a>
+						</label>  
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#3">11月1日</a>
+						</label>  
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#4">11月2日</a>
+						</label>  
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#5">12月3日</a>
+						</label> 
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#6">12月4日</a>
+						</label>  
+						<label class="btn btn-default">
+								<a data-toggle="tab" href="#7">12月5日</a>
+						</label> 
+					  </div>  
+					<div className="top">
+						<div className="total">
+							<Card title="气量预测">
+								<Statistic title="气量预测总值" value={1658} valueStyle={{ color: '#cf1322' }} suffix="万Nm³" />
+								<div className="box1">
+									<div className="item">
+										<div class="label-text">大用户申报总量：</div><InputNumber min={0} max={100000} defaultValue={575} />&nbsp;万Nm³
+									</div>
+									<div className="item">
+										<div class="label-text">商业用户总量：</div><InputNumber min={0} max={100000} defaultValue={243.7} />&nbsp;万Nm³
+									</div>
+									<div className="item">
+										<div class="label-text">居民用户总量：</div><InputNumber min={0} max={100000} defaultValue={839.1} />&nbsp;万Nm³
+									</div>
+								</div>
+							</Card>
+							<Card title="当前库存" className="mT10">
+								<Statistic title="当前库存总值" value={61} valueStyle={{ color: '#cf1322' }} suffix="万Nm³" />
+								<div className="box2">
+									<div className="item">
+										<div class="label-text">当前管存量：</div><InputNumber min={0} max={100000} defaultValue={25.6} />&nbsp;万Nm³
+									</div>
+									<div className="item">
+										<div class="label-text">当前LNG存量：</div><InputNumber min={0} max={100000} defaultValue={35.4} />&nbsp;万Nm³
+									</div>
+								</div>
+							</Card>
+						</div>
+						<div className="contract">
+							<Card title="门站">
+								<Table columns={stationColumns} dataSource={stationData} pagination={false} scroll={{ y: 260 }} />
+							</Card>
+							
+						</div>
+					</div>
+					<div className="footer mT10">
+						<div className="station mR10">
+							<Card title="LNG">
+								<Table columns={gasColumns} dataSource={gasData} pagination={false} scroll={{ y: 260 }} />
+							</Card>
+						</div>
+						<div className="gas">
+							<Card title="天然气交易市场">
+								<Table columns={marketColumns} dataSource={marketData} pagination={false} scroll={{ y: 260 }} />
+							</Card>
+						</div>
+					</div>
+					<div className="calculation mT10">
+						<div className="market mR10">
+							<Card title="合同约束条件" className="contractCard">
+								<Table columns={contractColumns} dataSource={contractData} pagination={paginationProps} />
+							</Card>
+						</div>
+						<div className="cal_total">
+							<Card title="合计">
+								<div className="cal">
+									<div className="mR10">
+										<span>总气量：</span>
+										<InputNumber disabled defaultValue={1658} />&nbsp;
+									<span>万Nm³</span>
+									</div>
+									<div>
+										<span>总金额：</span>
+										<InputNumber disabled defaultValue={31502000} />&nbsp;
+									<span>元</span>
+									</div>
+								</div>
+								<div className="cal_btns mT20">
+									<Button type="primary" className="mR10">模拟计算</Button>
+									<Button type="cancel" className="mR10" class="">方案导出</Button>
+									<Button type="primary">参数重置</Button>
+								</div>
+							</Card>
+						</div>
+					</div>
+			      </div>
+				</div>,
+				root
+			)
+      
+        $('.btn-group label.btn').click(function() {
+          $('.btn-group label.btn').removeClass('active');
+          $(this).addClass('active')
+        })
+		})
+	</script>
+
+	<style>
+		.source {
+			padding: 20px;
+		}
+		.top {
+		margin-top:10px;
+			display  : flex;
+    	flex-wrap: wrap;
+		}
+		.total {
+			flex: 1;
+			margin-right: 10px;
+		}
+		.box1 {
+			display        : flex;
+			justify-content: flex-start;
+			flex-wrap      : wrap;
+		}
+		.box1	.item {
+			flex: 0 0 50%;
+			margin-top: 10px;
+		}
+		.label-text {
+			display: inline-block;
+			width: 36%;
+		}
+
+		.box2 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			flex-wrap: wrap;	
+		}
+		.box2	.item {
+			flex: 0 0 50%;
+			margin-top: 10px;
+		}
+
+		.contract {
+			flex: 1;
+		}
+		.contract .contractCard .ant-card-body {
+			padding-bottom: 12px;
+		}
+
+		.footer {
+			display  : flex;
+			flex-wrap: wrap;
+			padding: 0!important;
+		}
+		.footer .station {
+      flex: 1;
+    }
+
+    .footer .gas {
+      flex: 1;
+    }
+
+		.calculation {
+			display: flex;
+		}
+		.calculation .market {
+      flex: 1;
+    }
+
+    .calculation .cal_total {
+      flex: 1;
+		}
+		.cal {
+			display: flex;
+			justify-content: center;
+		}
+
+		.cal_btns {
+			display: flex;
+			justify-content: center;
+		}
+		.mR10 {
+			margin-right: 10px;
+		}
+
+		.mT10 {
+			margin-top: 15px;
+		}
+
+		.mT20 {
+			margin-top: 25px;
+		}
+		.ant-btn-cancel {
+			border-color: #203864;
+		}
+	</style>
+  </body>
+ </html>
